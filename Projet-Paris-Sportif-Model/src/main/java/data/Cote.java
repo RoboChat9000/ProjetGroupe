@@ -2,6 +2,8 @@ package data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -9,20 +11,17 @@ import javax.persistence.Table;
 @Table(name="Cote")
 public class Cote {
 
-	
+	@Id
 	@OneToOne
-	@Column(name="COT_MATCH")
+	@JoinColumn(name="cot_match_id")
 	private Match match;
 	
-	@OneToOne
 	@Column(name="COT_DOM")
 	private int dom;
 	
-	@OneToOne
 	@Column(name="COT_NUL")
 	private int nul;
 	
-	@OneToOne
 	@Column(name="COT_EXT")
 	private int ext;
 	

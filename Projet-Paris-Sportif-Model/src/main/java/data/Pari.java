@@ -12,23 +12,28 @@ public class Pari {
 	@ManyToOne
 	@JoinColumn(name="par_utilisateur_id")
 	private Utilisateur utilisateur;
+	
 	//faudra potentiellement rajouter une liste de paris pour la classe match
 	@NotEmpty
 	@ManyToOne
 	@JoinColumn(name="par_match_id")
 	private Match match;
+	
 	@Column(name="par_result_dom", columnDefinition="INT NOT NULL")
 	@NotEmpty
 	@Min(0)
 	private int resultatDom;
+	
 	@Column(name="par_result_ext", columnDefinition="INT NOT NULL")
 	@NotEmpty
 	@Min(0)
 	private int resultatExt;
+	
 	@NotEmpty
 	@OneToOne
 	@JoinColumn(name="par_vainqueur")
 	private Equipe vainqueur;
+	
 	@Column(name="par_DateHeure", columnDefinition="DATETIME")
 	@NotEmpty
 	private String date;

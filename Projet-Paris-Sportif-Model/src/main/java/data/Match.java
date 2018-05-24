@@ -18,48 +18,43 @@ public class Match {
 	@Column(name="MAT_ID")
 	protected int id;
 	
-	@ManyToOne()
-	@JoinColumn(name = "EQU_ID")
+	@ManyToOne
+	@JoinColumn(name = "mat_equipe_dom_id")
 	protected Equipe equipeDom;
 	
-	@ManyToOne()
-	@JoinColumn(name = "EQU_ID")
+	@ManyToOne
+	@JoinColumn(name = "mat_equipe_ext_id")
 	protected Equipe equipeExt;
 	
-	@ManyToOne()
-	@JoinColumn(name = "MAT_ID")
+	@ManyToOne
+	@JoinColumn(name = "MAT_stade_ID")
 	protected Stade stade;
 	
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name="MAT_PHASE")
+	@Column(name="MAT_PHASE_id")
 	protected Phase phase;
 	
-	@Column(name="MAT_DATE", nullable=false, columnDefinition="DATETIME DEFAULT CURRENT_TIMESTAMP")
+	@Column(name="MAT_DATEHEURE", nullable=false, columnDefinition="DATETIME DEFAULT CURRENT_TIMESTAMP")
 	@Temporal(TemporalType.DATE)
 	@NotNull
 	protected String date;
 	
 	@Column(name="MAT_RESULTAT_DOM", columnDefinition="INT DEFAULT 0")
-	@NotNull
 	@NotEmpty
 	protected int resultatDom;
 	
 	@Column(name="MAT_RESULTAT_EXT", columnDefinition="INT DEFAULT 0")
-	@NotNull
 	@NotEmpty
 	protected int resultatExt;
 	
 	@Column(name="MAT_TERMINE", columnDefinition="BOOL DEFAULT 0")
-	@NotNull
-	@NotEmpty
 	protected boolean termine;
 	
-	@OneToOne()
-	@JoinColumn(name = "COT_ID")
+	@OneToOne (mappedBy = "match")
 	protected Cote cote;
 
-	DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+//	DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 	
 	public Match() {
 	}

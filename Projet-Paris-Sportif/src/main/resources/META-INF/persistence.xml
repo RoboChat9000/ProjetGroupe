@@ -10,7 +10,6 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/x
 <class>fr.formation.Equipe</class>
 <class>fr.formation.Main</class>
 <class>fr.formation.Match</class>
-<class>fr.formation.MatchEliminatoire</class>
 <class>fr.formation.Pari</class>
 <class>fr.formation.Phase</class>
 <class>fr.formation.Poule</class>
@@ -22,7 +21,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/x
 <!-- <property name="eclipselink.logging.parameters" value="false"/>
 <property name="eclipselink.logging.level.sql" value="OFF"/> -->
 
-<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/projet_paris" />
+<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/projet_paris_true" />
 <property name="hibernate.connection.driver" value="com.mysql.jdbc.Driver" />
 <property name="hibernate.connection.user" value="root" />
 <property name="hibernate.connection.password" value="" />

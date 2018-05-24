@@ -1,5 +1,7 @@
 package data;
 
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -18,6 +20,9 @@ public class Poule {
 	@Size(max=50)
 	private String nom;
 
+	@OneToMany (mappedBy="poule")
+	List<Equipe> listeEquipes;
+	
 	
 	public Poule(String nom) {
 		this.nom = nom;
@@ -44,6 +49,11 @@ public class Poule {
 	public String toString() {
 		String s = "Poule " + nom + " \n";
 		return s;
+	}
+	
+	public void classement()
+	{
+		//algo pour calculer le classement des équipes au sein de la poule
 	}
 
 	

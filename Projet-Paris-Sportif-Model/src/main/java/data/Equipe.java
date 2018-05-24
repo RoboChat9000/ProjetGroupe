@@ -15,8 +15,8 @@ public class Equipe {
 	private int id;
 	
 	
-	@ManyToOne()
-	@JoinColumn(name = "POU_ID")
+	@ManyToOne
+	@JoinColumn(name = "equ_poule_ID")
 	private Poule poule;
 	
 	@Column(name="EQU_NOM", columnDefinition="VARCHAR(50) NOT NULL DEFAULT 'INCONNU'")
@@ -26,8 +26,11 @@ public class Equipe {
 	private String nom;
 	
 	
-	@OneToMany(mappedBy="matchs")
-	private List<Match> matchs;
+	@OneToMany(mappedBy="equipeDom")
+	private List<Match> matchsDom;
+	
+	@OneToMany(mappedBy="equipeExt")
+	private List<Match> matchsExt;
 	
 	public Equipe() {
 	}
