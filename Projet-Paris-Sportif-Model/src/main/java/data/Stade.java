@@ -1,11 +1,36 @@
 package data;
 
+import javax.persistence.*;
+import javax.validation.constraints.*;
+
+@Entity
+@Table(name="Stade")
 public class Stade {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="STA_ID")
 	private int id;
+	
+	@Column(name="STA_NOM", columnDefinition="VARCHAR(50) NOT NULL DEFAULT 'INCONNU'")
+	@NotEmpty
+	@NotNull
+	@Size(max=50)
 	private String nom;
+	
+	@Column(name="STA_VILLE", columnDefinition="VARCHAR(50) NOT NULL DEFAULT 'INCONNU'")
+	@NotEmpty
+	@NotNull
+	@Size(max=50)
 	private String ville;
-	private double lat, lng;
+	
+	@Column(name="STA_LAT", columnDefinition="DECIMAL(10,6)")
+	@NotNull
+	private double lat;
+	
+	@Column(name="STA_LNG", columnDefinition="DECIMAL(10,6)")
+	@NotNull
+	private double lng;
 	
 	
 	public Stade() {
