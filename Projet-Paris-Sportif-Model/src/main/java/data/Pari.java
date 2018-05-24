@@ -17,11 +17,11 @@ public class Pari {
 	@ManyToOne
 	@JoinColumn(name="par_match_id")
 	private Match match;
-	@Column(name="par_result_dom", columnDefinition="int")
+	@Column(name="par_result_dom", columnDefinition="INT NOT NULL")
 	@NotEmpty
 	@Min(0)
 	private int resultatDom;
-	@Column(name="par_result_ext", columnDefinition="int")
+	@Column(name="par_result_ext", columnDefinition="INT NOT NULL")
 	@NotEmpty
 	@Min(0)
 	private int resultatExt;
