@@ -3,6 +3,7 @@ package data;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
 @Table(name="Equipe")
@@ -14,17 +15,21 @@ public class Equipe {
 	private int id;
 	
 	
-	private int idPoule;
+	@ManyToOne()
+	@JoinColumn(name = "POU_ID")
+	private Poule poule;
+	
+	@Column(name="EQU_NOM", columnDefinition="VARCHAR(50) NOT NULL DEFAULT 'INCONNU'")
+	@NotEmpty
+	@NotNull
+	@Size(max=50)
 	private String nom;
 	
 	
 	@OneToMany(mappedBy="matchs")
 	private List<Match> matchs;
 	
-	public Equipe(int id, int idPoule, String nom) {
-		this.id = id;
-		this.idPoule = idPoule;
-		this.nom = nom;
+	public Equipe() {
 	}
 
 	
@@ -41,14 +46,14 @@ public class Equipe {
 
 
 
-	public int getIdPoule() {
-		return idPoule;
+	public Poule getPoule() {
+		return poule;
 	}
 
 
 
-	public void setIdPoule(int idPoule) {
-		this.idPoule = idPoule;
+	public void setPoule(Poule poule) {
+		this.poule = poule;
 	}
 
 

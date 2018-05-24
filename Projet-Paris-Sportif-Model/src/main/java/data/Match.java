@@ -30,8 +30,9 @@ public class Match {
 	@JoinColumn(name = "MAT_ID")
 	protected Stade stade;
 	
-	@ManyToOne()
-	@JoinColumn(name = "PHA_ID")
+	
+	@Enumerated(EnumType.STRING)
+	@Column(name="MAT_PHASE")
 	protected Phase phase;
 	
 	@Column(name="MAT_DATE", nullable=false, columnDefinition="DATETIME DEFAULT CURRENT_TIMESTAMP")
@@ -39,12 +40,12 @@ public class Match {
 	@NotNull
 	protected String date;
 	
-	@Column(name="MAT_RESULTAT_DOM", columnDefinition="INT NOT NULL")
+	@Column(name="MAT_RESULTAT_DOM", columnDefinition="INT DEFAULT 0")
 	@NotNull
 	@NotEmpty
 	protected int resultatDom;
 	
-	@Column(name="MAT_RESULTAT_EXT", columnDefinition="INT NOT NULL")
+	@Column(name="MAT_RESULTAT_EXT", columnDefinition="INT DEFAULT 0")
 	@NotNull
 	@NotEmpty
 	protected int resultatExt;
