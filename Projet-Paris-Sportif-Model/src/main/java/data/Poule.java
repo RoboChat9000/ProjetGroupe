@@ -1,9 +1,21 @@
 package data;
 
+import javax.persistence.*;
+import javax.validation.constraints.*;
 
+@Entity
+@Table(name="poule")
 public class Poule {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="POU_ID")
 	private int id;
+	
+	@Column(name="POU_NOM", columnDefinition="VARCHAR(50) NOT NULL DEFAULT 'INCONNU'")
+	@NotEmpty
+	@NotNull
+	@Size(max=50)
 	private String nom;
 
 	
