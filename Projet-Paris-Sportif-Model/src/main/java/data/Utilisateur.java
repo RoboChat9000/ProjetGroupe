@@ -18,6 +18,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -60,8 +61,10 @@ public class Utilisateur {
 			name="listUtilisateur", 
 			inverseJoinColumns=@JoinColumn(name="ul_ligue_id", referencedColumnName="lig_id"),
 		    joinColumns=@JoinColumn(name="ul_utilisateur_id", referencedColumnName="uti_id"))
-	List<Ligue> listLigue = new ArrayList<Ligue>();
+	private List<Ligue> listLigue = new ArrayList<Ligue>();
 	
+	@OneToMany(mappedBy="utilisateur")
+	private List<Pari> lesParis;
 	
 	public Utilisateur()
 	{

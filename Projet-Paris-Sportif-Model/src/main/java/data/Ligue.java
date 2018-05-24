@@ -5,6 +5,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -23,12 +24,11 @@ public class Ligue {
 	private String nom;
 	
 	@ManyToMany(mappedBy="listUtilisateur")
-	private ArrayList<Utilisateur> listUtilisateur;
+	private List<Utilisateur> listUtilisateur;
 	
 	public Ligue(int id, String nom) {
 		this.id = id;
 		this.nom = nom;
-		listUtilisateur = new ArrayList<Utilisateur>();
 	}
 
 	public int getId() {
@@ -47,11 +47,11 @@ public class Ligue {
 		this.nom = nom;
 	}
 
-	public ArrayList<Utilisateur> getListUtilisateur() {
+	public List<Utilisateur> getListUtilisateur() {
 		return listUtilisateur;
 	}
 
-	public void setListUtilisateur(ArrayList<Utilisateur> listUtilisateur) {
+	public void setListUtilisateur(List<Utilisateur> listUtilisateur) {
 		this.listUtilisateur = listUtilisateur;
 	}
 	
