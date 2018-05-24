@@ -1,10 +1,25 @@
 package data;
 
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="Equipe")
 public class Equipe {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="EQU_ID")
 	private int id;
+	
+	
 	private int idPoule;
 	private String nom;
+	
+	
+	@OneToMany(mappedBy="matchs")
+	private List<Match> matchs;
 	
 	public Equipe(int id, int idPoule, String nom) {
 		this.id = id;

@@ -4,16 +4,27 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.persistence;
+import javax.persistence.*;;
 
 @Entity
-@DiscriminatorValue("Match")
+@Table(name="Match")
 public class Match {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="MAT_ID")
 	protected int id;
-	protected int equipeDom;
-	protected int equipeExt;
-	protected int stade;
+	
+	@ManyToOne()
+	@JoinColumn(name = "EQU_ID")
+	protected Equipe equipeDom;
+	
+	@ManyToOne()
+	@JoinColumn(name = "EQU_ID")
+	protected Equipe equipeExt;
+	
+	
+	protected Stade stade;
 	protected Phase phase;
 	protected String date;
 	protected int resultatDom;
