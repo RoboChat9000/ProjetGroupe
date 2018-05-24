@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+xmlns="http://java.sun.com/xml/ns/persistence"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+<persistence-unit name="Persist" transaction-type="RESOURCE_LOCAL">
+<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+<class>fr.formation.Cote </class>
+<class>fr.formation.Ligue</class>
+<class>fr.formation.Equipe</class>
+<class>fr.formation.Main</class>
+<class>fr.formation.Match</class>
+<class>fr.formation.MatchEliminatoire</class>
+<class>fr.formation.Pari</class>
+<class>fr.formation.Phase</class>
+<class>fr.formation.Poule</class>
+<class>fr.formation.Stade</class>
+<class>fr.formation.Stat</class>
+<class>fr.formation.Utilisateur</class>
+
+<properties>
+<!-- <property name="eclipselink.logging.parameters" value="false"/>
+<property name="eclipselink.logging.level.sql" value="OFF"/> -->
+
+<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/projet_paris" />
+<property name="hibernate.connection.driver" value="com.mysql.jdbc.Driver" />
+<property name="hibernate.connection.user" value="root" />
+<property name="hibernate.connection.password" value="" />
+
+<!-- EHCache -->
+<!--
+<property name="hibernate.cache.use_second_level_cache" value="true" />
+<property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory" />
+<property name="hibernate.cache.use_query_cache" value="true" /> -->
+
+<!-- Permet d'exécuter les requêtes DDL pour la génération de la base de données -->
+<!-- Valeurs possibles : validate, update, create, create-drop -->
+<property name="hibernate.hbm2ddl.auto" value="update" />
+<!-- On utilise le moteur innoDB -->
+<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
+<!-- On imprime les requêtes SQL générées par Hibernate dans la console -->
+<property name="hibernate.show_sql" value="true" />
+<property name="hibernate.format_sql" value="true" />
+</properties>
+</persistence-unit>
+</persistence>
