@@ -12,6 +12,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import DAO.*;
 import data.Equipe;
 import data.Match;
 import data.Pari;
@@ -23,13 +24,27 @@ public class Main {
 
 	public static void main(String[] args) throws SQLException, ParseException {  
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Persist");
-		EntityManager em = emf.createEntityManager();
+//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Persist");
+//		EntityManager em = emf.createEntityManager();
 //		EntityTransaction tx = em.getTransaction();
 //		tx.begin();
 //		tx.commit();
-		em.close();
-		emf.close();
+	
+//		Utilisateur U1 = new Utilisateur("Gandoulf le grit", "Gandoulf@TDMM.com", "Mithrandir", "Day", "Léo");
+//				
+//		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+//		try {
+//			U1.setDateNaissance(formatter.parse("1990-10-10"));
+//			
+//		} catch (ParseException e) {
+//			System.out.println("erreur au niveau de la création de la date de naissance du client");
+//			e.printStackTrace();
+//		}
+		
+		DAOUtilisateur DAOUtil = new DAOUtilisateur();
+//		DAOUtil.save(U1);
+		System.out.println(DAOUtil.findById(1));
+		HibernateUtils.close();
 		
 }
 }

@@ -87,7 +87,15 @@ public class Utilisateur {
 		this.mail= mail;
 		this.mdp = mdp;
 	}
-	
+public Utilisateur(String pseudo, String mail, String mdp, String nom, String prenom) {
+		
+		this.pseudo = pseudo;
+		this.mail= mail;
+		this.mdp = mdp;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dateNaissance = dateNaissance;
+	}
 	
 	public Utilisateur(String pseudo, String mail, String mdp, String nom, String prenom, Date dateNaissance) {
 		
