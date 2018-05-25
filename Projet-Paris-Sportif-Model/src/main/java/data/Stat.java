@@ -1,10 +1,12 @@
 package data;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="statistiques")
-public class Stat {
+public class Stat implements Serializable{
 	@Id
 	@OneToOne
 	@JoinColumn (name="stat_utilisateur_id")

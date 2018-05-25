@@ -1,5 +1,6 @@
 package data;
 
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,7 +11,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;;
 
 @Entity
-@Table(name="Match")
+@Table(name="matches")
 public class Match {
 
 	@Id
@@ -32,7 +33,7 @@ public class Match {
 	
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name="MAT_PHASE_id")
+	@Column(name="MAT_PHASE")
 	protected Phase phase;
 	
 	@Column(name="MAT_DATEHEURE", nullable=false, columnDefinition="DATETIME DEFAULT CURRENT_TIMESTAMP")
@@ -48,10 +49,10 @@ public class Match {
 	@NotEmpty
 	protected int resultatExt;
 	
-	@Column(name="MAT_TERMINE", columnDefinition="BOOL DEFAULT 0")
+	@Column(name="MAT_TERMINE", columnDefinition="BOOLEAN DEFAULT 0")
 	protected boolean termine;
 	
-	@OneToOne (mappedBy = "match")
+	@OneToOne (mappedBy = "matchCote")
 	protected Cote cote;
 
 //	DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");

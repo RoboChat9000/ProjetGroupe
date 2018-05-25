@@ -4,8 +4,8 @@ import java.util.Date;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
-@IdClass(PariId.class)
 @Entity
+@IdClass(PariId.class)
 public class Pari {
 
 	@Id
@@ -15,7 +15,7 @@ public class Pari {
 	private Utilisateur utilisateur;
 	
 	//faudra potentiellement rajouter une liste de paris pour la classe match
-	@Id 
+	@Id
 	@NotEmpty
 	@ManyToOne
 	@JoinColumn(name="par_match_id")
@@ -102,4 +102,8 @@ public class Pari {
 		System.out.println("not implemented yet");
 	}
 	
+	public Pari()
+	{
+		
+	}
 }

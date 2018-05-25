@@ -1,5 +1,7 @@
 package data;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,12 +11,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Cote")
-public class Cote {
+public class Cote implements Serializable{
 
 	@Id
 	@OneToOne
 	@JoinColumn(name="cot_match_id")
-	private Match match;
+	private Match matchCote;
 	
 	@Column(name="COT_DOM")
 	private int dom;

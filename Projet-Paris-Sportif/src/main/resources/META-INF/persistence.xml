@@ -16,6 +16,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/x
 <class>data.Stade</class>
 <class>data.Stat</class>
 <class>data.Utilisateur</class>
+<class>data.PariId</class>
 
 <properties>
 <!-- <property name="eclipselink.logging.parameters" value="false"/>
