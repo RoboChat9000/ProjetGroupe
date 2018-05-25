@@ -5,17 +5,17 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 <persistence-unit name="Persist" transaction-type="RESOURCE_LOCAL">
 <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-<class>fr.formation.Cote </class>
-<class>fr.formation.Ligue</class>
-<class>fr.formation.Equipe</class>
-<class>fr.formation.Main</class>
-<class>fr.formation.Match</class>
-<class>fr.formation.Pari</class>
-<class>fr.formation.Phase</class>
-<class>fr.formation.Poule</class>
-<class>fr.formation.Stade</class>
-<class>fr.formation.Stat</class>
-<class>fr.formation.Utilisateur</class>
+<class>data.Cote </class>
+<class>data.Ligue</class>
+<class>data.Equipe</class>
+<class>data.Main</class>
+<class>data.Match</class>
+<class>data.Pari</class>
+<class>data.Phase</class>
+<class>data.Poule</class>
+<class>data.Stade</class>
+<class>data.Stat</class>
+<class>data.Utilisateur</class>
 
 <properties>
 <!-- <property name="eclipselink.logging.parameters" value="false"/>

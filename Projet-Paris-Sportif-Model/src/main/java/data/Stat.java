@@ -1,12 +1,11 @@
 package data;
 
 import javax.persistence.*;
-import javax.persistence.OneToOne;
 
 @Entity
 @Table(name="statistiques")
 public class Stat {
-
+	@Id
 	@OneToOne
 	@JoinColumn (name="stat_utilisateur_id")
 	private Utilisateur utilisateur;

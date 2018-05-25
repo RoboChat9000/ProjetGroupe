@@ -4,16 +4,18 @@ import java.util.Date;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
-
+@IdClass(PariId.class)
+@Entity
 public class Pari {
 
-	
+	@Id
 	@NotEmpty
 	@ManyToOne
 	@JoinColumn(name="par_utilisateur_id")
 	private Utilisateur utilisateur;
 	
 	//faudra potentiellement rajouter une liste de paris pour la classe match
+	@Id 
 	@NotEmpty
 	@ManyToOne
 	@JoinColumn(name="par_match_id")

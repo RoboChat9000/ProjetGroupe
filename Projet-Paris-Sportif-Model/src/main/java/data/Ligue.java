@@ -23,7 +23,7 @@ public class Ligue {
 	@Size(max=50)
 	private String nom;
 	
-	@ManyToMany(mappedBy="listUtilisateur")
+	@ManyToMany(mappedBy="listLigue")
 	private List<Utilisateur> listUtilisateur;
 	
 	public Ligue(int id, String nom) {

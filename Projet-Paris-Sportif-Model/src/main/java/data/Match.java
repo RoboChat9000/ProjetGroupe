@@ -38,7 +38,7 @@ public class Match {
 	@Column(name="MAT_DATEHEURE", nullable=false, columnDefinition="DATETIME DEFAULT CURRENT_TIMESTAMP")
 	@Temporal(TemporalType.DATE)
 	@NotNull
-	protected String date;
+	protected Date date;
 	
 	@Column(name="MAT_RESULTAT_DOM", columnDefinition="INT DEFAULT 0")
 	@NotEmpty
@@ -118,13 +118,13 @@ public class Match {
 
 
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
 
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
