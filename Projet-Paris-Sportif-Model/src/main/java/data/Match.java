@@ -185,7 +185,7 @@ public class Match {
 	
 	public String toString() {
 		String s = "";
-		s =  "Match numéro : " + this.id;
+		s =  "Match numï¿½ro : " + this.id;
 		return  s;
 	}
 
