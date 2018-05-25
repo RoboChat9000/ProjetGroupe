@@ -37,12 +37,12 @@ public class DAOUtilisateur {
 		return this.em.createNativeQuery("select * from Utilisateur", Utilisateur.class).setHint("org.hibernate.cacheable", true).getResultList();
 	};
 	
-	public boolean save(Utilisateur entity) {
+	public Utilisateur save(Utilisateur entity) {
 		EntityTransaction tx = this.em.getTransaction();
 		tx.begin();
-		this.em.persist(entity);
+		entity = this.em.merge(entity);
 		tx.commit();
-		return true;
+		return entity;
 	
 }
 	public Utilisateur findByPseudo (String pseudo)

@@ -28,7 +28,7 @@ private EntityManager em;
 	public Pari save(Pari entity) {
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
-		em.persist(entity);
+		entity = em.merge(entity);
 		tx.commit();
 		return entity;
 	}

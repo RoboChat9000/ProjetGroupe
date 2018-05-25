@@ -36,16 +36,18 @@ public class DataGenerator {
 	Cote c1 = new Cote(m1, 1, 2, 3);
 
 	
-	DAOMat.save(m1);
+	m1 = DAOMat.save(m1);
 //	DAOCot.save(c1);
 
 	
 	System.out.println(DAOMat.findById(1));
 	System.out.println(DAOCot.findById(1));
 
-	Utilisateur U1 = DAOUtil.findById(1);
+	
+	Utilisateur U1 = new Utilisateur("util1", "mail", "mdp");
+	U1 = DAOUtil.save(U1);
 	Pari Par1 = new Pari(U1, m1, 1, 2, E1);
-	DAOPari.save(Par1);
+	Par1 = DAOPari.save(Par1);
 	System.out.println(DAOPari.findById(1));
 	
 	

@@ -53,7 +53,7 @@ public class Match {
 	@Column(name="MAT_TERMINE", columnDefinition="BOOLEAN DEFAULT 0")
 	protected boolean termine;
 	
-	@OneToOne (mappedBy = "matchCote", cascade = CascadeType.MERGE)
+	@OneToOne (mappedBy = "matchCote", cascade = CascadeType.ALL)
 	protected Cote cote;
 
 //	DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");

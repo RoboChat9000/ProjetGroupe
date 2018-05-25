@@ -28,7 +28,7 @@ public class DAOMatchJPA implements IDAOMatch{
 	public Match save(Match entity) {
 		EntityTransaction tx = em.getTransaction();
 		tx.begin();
-		em.persist(entity);
+		entity = em.merge(entity);
 		tx.commit();
 		return entity;
 	}
