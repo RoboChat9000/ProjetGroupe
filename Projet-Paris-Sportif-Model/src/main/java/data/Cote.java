@@ -31,10 +31,10 @@ public class Cote implements Serializable{
 	private int vainqueurExt;*/
 	
 	public Cote(Match match, int coteDom, int coteNul, int coteExt /*, int coteVainqueurDom, int coteVainqueurExt*/) {
-		this.match = match;
-		this.dom = dom;
-		this.nul = nul;
-		this.ext = ext;
+		this.matchCote = match;
+		this.dom = coteDom;
+		this.nul = coteNul;
+		this.ext = coteExt;
 /*		this.vainqueurDom = vainqueurDom;
 		this.vainqueurExt = vainqueurExt;*/
 	}
