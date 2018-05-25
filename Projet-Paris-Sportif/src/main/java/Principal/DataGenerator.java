@@ -7,7 +7,7 @@ import DAO.*;
 import data.*;
 
 public class DataGenerator {
-	public static void main(String[] args) throws SQLException, ParseException { 
+	/*public static void main(String[] args) throws SQLException, ParseException { 
 	DAOCoteJPA DAOCot = new DAOCoteJPA();
 	DAOEquipeJPA DAOEqu = new DAOEquipeJPA();
 	DAOMatchJPA DAOMat = new DAOMatchJPA();
@@ -52,5 +52,5 @@ public class DataGenerator {
 	
 	HibernateUtils.close();
 	
-}
+}*/
 }

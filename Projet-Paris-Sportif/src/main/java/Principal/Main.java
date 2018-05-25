@@ -13,38 +13,20 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import DAO.*;
-import data.Equipe;
-import data.Match;
-import data.Pari;
-import data.Phase;
-import data.Stade;
-import data.Utilisateur;
+import data.*;
 
 public class Main {
 
 	public static void main(String[] args) throws SQLException, ParseException {  
-		
-//		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Persist");
-//		EntityManager em = emf.createEntityManager();
-//		EntityTransaction tx = em.getTransaction();
-//		tx.begin();
-//		tx.commit();
+		HibernateUtils.open();
+DAOMatchJPA DAOMat = new DAOMatchJPA();
+DAOStadeJPA DAOSta = new DAOStadeJPA();
+//PariId AI = new PariId(1,1);
+System.out.println(DAOMat.findById(1));
+System.out.println(DAOSta.findAll());
+DAOUtilisateur DAOUtil = new DAOUtilisateur();
+System.out.println(DAOUtil.findById(1));
+		HibernateUtils.close();
 	
-//		Utilisateur U1 = new Utilisateur("Gandoulf le grit", "Gandoulf@TDMM.com", "Mithrandir", "Day", "Léo");
-//				
-//		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-//		try {
-//			U1.setDateNaissance(formatter.parse("1990-10-10"));
-//			
-//		} catch (ParseException e) {
-//			System.out.println("erreur au niveau de la création de la date de naissance du client");
-//			e.printStackTrace();
-//		}
-		
-//		DAOUtilisateur DAOUtil = new DAOUtilisateur();
-////		DAOUtil.save(U1);
-//		System.out.println(DAOUtil.findById(1));
-//		HibernateUtils.close();
-		
 }
 }
