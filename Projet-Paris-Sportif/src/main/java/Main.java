@@ -20,7 +20,7 @@ import data.Utilisateur;
 
 public class Main {
 
-	public static void main(String[] args) throws SQLException, ParseException {
+	public static void main(String[] args) throws SQLException, ParseException {  
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Persist");
 		EntityManager em = emf.createEntityManager();
