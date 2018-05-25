@@ -88,13 +88,13 @@ public class Pari {
 		this.date = date;
 	}
 
-	public Pari(Utilisateur utilisateur, Match match, int resultatDom, int resultatExt, Equipe vainqueur, String date) {
+	public Pari(Utilisateur utilisateur, Match match, int resultatDom, int resultatExt, Equipe vainqueur) {
 		this.utilisateur = utilisateur;
 		this.match = match;
 		this.resultatDom = resultatDom;
 		this.resultatExt = resultatExt;
 		this.vainqueur = vainqueur;
-		this.date = date;
+	
 	}
 
 	public void parier()

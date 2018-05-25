@@ -30,13 +30,15 @@ public class Cote implements Serializable{
 /*	private int vainqueurDom;
 	private int vainqueurExt;*/
 	
-	public Cote(Match match, int coteDom, int coteNul, int coteExt /*, int coteVainqueurDom, int coteVainqueurExt*/) {
+	public Cote()
+	{
+		
+	}
+	public Cote(Match match, int coteDom, int coteNul, int coteExt) {
 		this.matchCote = match;
 		this.dom = coteDom;
 		this.nul = coteNul;
 		this.ext = coteExt;
-/*		this.vainqueurDom = vainqueurDom;
-		this.vainqueurExt = vainqueurExt;*/
 	}
 	
 }

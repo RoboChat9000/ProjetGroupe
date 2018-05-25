@@ -41,10 +41,10 @@ public class Main {
 //			e.printStackTrace();
 //		}
 		
-		DAOUtilisateur DAOUtil = new DAOUtilisateur();
-//		DAOUtil.save(U1);
-		System.out.println(DAOUtil.findById(1));
-		HibernateUtils.close();
+//		DAOUtilisateur DAOUtil = new DAOUtilisateur();
+////		DAOUtil.save(U1);
+//		System.out.println(DAOUtil.findById(1));
+//		HibernateUtils.close();
 		
 }
 }

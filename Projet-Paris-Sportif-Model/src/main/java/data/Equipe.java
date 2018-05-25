@@ -1,5 +1,6 @@
 package data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -32,6 +33,12 @@ public class Equipe {
 	@OneToMany(mappedBy="equipeExt")
 	private List<Match> matchsExt;
 	
+	public Equipe(Poule poule, String nom) {
+		this.poule = poule;
+		this.nom = nom;
+		this.matchsDom = new ArrayList<Match>();
+		this.matchsExt = new ArrayList<Match>();
+	}
 	public Equipe() {
 	}
 

@@ -8,7 +8,9 @@ import java.util.Date;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;;
+import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.Cascade;;
 
 @Entity
 @Table(name="matches")
@@ -36,9 +38,8 @@ public class Match {
 	@Column(name="MAT_PHASE")
 	protected Phase phase;
 	
-	@Column(name="MAT_DATEHEURE", nullable=false, columnDefinition="DATETIME DEFAULT CURRENT_TIMESTAMP")
+	@Column(name="MAT_DATEHEURE", nullable=true, columnDefinition="DATETIME DEFAULT CURRENT_TIMESTAMP")
 	@Temporal(TemporalType.DATE)
-	@NotNull
 	protected Date date;
 	
 	@Column(name="MAT_RESULTAT_DOM", columnDefinition="INT DEFAULT 0")
@@ -52,10 +53,35 @@ public class Match {
 	@Column(name="MAT_TERMINE", columnDefinition="BOOLEAN DEFAULT 0")
 	protected boolean termine;
 	
-	@OneToOne (mappedBy = "matchCote")
+	@OneToOne (mappedBy = "matchCote", cascade = CascadeType.MERGE)
 	protected Cote cote;
 
 //	DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+	
+	
+	public Match(Equipe equipeDom, Equipe equipeExt, Stade stade, Phase phase, int resultatExt, int resultatDom, boolean termine, Cote cote)
+	{
+		this.equipeDom=equipeDom;
+		this.equipeExt=equipeExt;
+		this.stade=stade;
+		this.phase=phase;
+		this.resultatExt=resultatExt;
+		this.resultatDom=resultatDom;
+		this.termine=termine;
+		this.cote=cote;		
+	}
+	
+	public Match(Equipe equipeDom, Equipe equipeExt, Stade stade, Phase phase, int resultatExt, int resultatDom, boolean termine)
+	{
+		this.equipeDom=equipeDom;
+		this.equipeExt=equipeExt;
+		this.stade=stade;
+		this.phase=phase;
+		this.resultatExt=resultatExt;
+		this.resultatDom=resultatDom;
+		this.termine=termine;
+	}
+	
 	
 	public Match() {
 	}

@@ -1,10 +1,11 @@
 package data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
-
+import data.Equipe;
 @Entity
 @Table(name="poule")
 public class Poule {
@@ -23,9 +24,13 @@ public class Poule {
 	@OneToMany (mappedBy="poule")
 	List<Equipe> listeEquipes;
 	
-	
+	public Poule()
+	{
+		
+	}
 	public Poule(String nom) {
 		this.nom = nom;
+		this.listeEquipes = new ArrayList<Equipe>();
 	}
 	
 

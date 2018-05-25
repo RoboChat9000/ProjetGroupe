@@ -37,8 +37,8 @@ public class Stade {
 		
 	}
 	
-	public Stade(int id, String nom, String ville, double lat, double lng) {
-		this.id = id;
+	public Stade(String nom, String ville, double lat, double lng) {
+	
 		this.nom = nom;
 		this.ville = ville;
 		this.lat = lat;
