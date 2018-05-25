@@ -20,7 +20,7 @@ public class DAOEquipeJPA implements IDAOEquipe {
 		
 		
 		
-		public Equipe findById(int id) {
+		public Equipe findById(Integer id) {
 			return this.em.find(Equipe.class, id);
 		}
 		

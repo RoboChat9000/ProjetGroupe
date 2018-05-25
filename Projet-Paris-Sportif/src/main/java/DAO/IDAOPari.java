@@ -3,10 +3,8 @@ package DAO;
 import java.util.List;
 
 import data.Pari;
+import data.PariId;
 
-public interface IDAOPari extends IDAO<Pari> {
-public Pari findById(int id);
-public List<Pari> findAll();
-public Pari save(Pari entity);
-public boolean delete(Pari entity);
+public interface IDAOPari extends IDAO<Pari, PariId> {
+
 }

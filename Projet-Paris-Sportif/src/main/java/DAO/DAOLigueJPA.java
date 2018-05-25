@@ -8,6 +8,7 @@ import javax.persistence.EntityTransaction;
 import DAO.HibernateUtils;
 import data.Ligue;
 
+
 public class DAOLigueJPA implements IDAOLigue {
 
 	
@@ -20,7 +21,7 @@ public class DAOLigueJPA implements IDAOLigue {
 		
 		
 		
-		public Ligue findById(int id) {
+		public Ligue findById(Integer id) {
 			return this.em.find(Ligue.class, id);
 		}
 		

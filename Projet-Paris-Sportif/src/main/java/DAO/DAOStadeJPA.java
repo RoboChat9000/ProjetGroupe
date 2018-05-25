@@ -20,7 +20,7 @@ public class DAOStadeJPA implements IDAOStade {
 		
 		
 		
-		public Stade findById(int id) {
+		public Stade findById(Integer id) {
 			return this.em.find(Stade.class, id);
 		}
 		

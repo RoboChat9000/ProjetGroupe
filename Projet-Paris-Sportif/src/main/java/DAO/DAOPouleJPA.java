@@ -16,7 +16,7 @@ private EntityManager em;
 		this.em = HibernateUtils.getEntityManager();
 	}
 
-	public Poule findById(int id) {
+	public Poule findById(Integer id) {
 		return em.find(Poule.class, id);
 	}
 

@@ -20,7 +20,7 @@ public class DAOCoteJPA implements IDAOCote {
 		
 		
 		
-		public Cote findById(int id) {
+		public Cote findById(Integer id) {
 			return this.em.find(Cote.class, id);
 		}
 		

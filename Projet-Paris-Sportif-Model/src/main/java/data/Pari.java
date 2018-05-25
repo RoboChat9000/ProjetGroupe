@@ -106,4 +106,8 @@ public class Pari {
 	{
 		
 	}
+	
+	public String toString() {
+		return "Pari : " + this.match.toString();
+	}
 }

@@ -16,7 +16,7 @@ public class DAOMatchJPA implements IDAOMatch{
 		this.em = HibernateUtils.getEntityManager();
 	}
 	
-	public Match findById(int id) {
+	public Match findById(Integer id) {
 		return em.find(Match.class, id);
 	}
 

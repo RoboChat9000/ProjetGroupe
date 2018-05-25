@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 import data.Pari;
+import data.PariId;
 
 public class DAOPariJPA implements IDAOPari{
 	
@@ -16,7 +17,7 @@ private EntityManager em;
 		this.em = HibernateUtils.getEntityManager();
 	}
 
-	public Pari findById(int id) {
+	public Pari findById(PariId id) {
 		return em.find(Pari.class, id);
 	}
 

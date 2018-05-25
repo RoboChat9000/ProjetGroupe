@@ -48,9 +48,9 @@ public class DataGenerator {
 	U1 = DAOUtil.save(U1);
 	Pari Par1 = new Pari(U1, m1, 1, 2, E1);
 	Par1 = DAOPari.save(Par1);
-	System.out.println(DAOPari.findById(1));
+	System.out.println(DAOPari.findById(new PariId(1,5)));
 	
-	
+	HibernateUtils.close();
 	
 }
 }

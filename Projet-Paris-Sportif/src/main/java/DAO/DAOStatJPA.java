@@ -16,7 +16,7 @@ private EntityManager em;
 		this.em = HibernateUtils.getEntityManager();
 	}
 
-	public Stat findById(int id) {
+	public Stat findById(Integer id) {
 		return em.find(Stat.class, id);
 	}
 
