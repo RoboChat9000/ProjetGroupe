@@ -15,15 +15,16 @@ public class AppConsole
 	@Autowired
 	private IDAOMatch IDAOMat;
 	
-	@Autowired
-	private IDAOMatch IDAOMatch;
 	
 	@Autowired
 	private IDAOUtilisateur IDAOUtil;
 	
 	
 	public void run(String[] args) {
-		System.out.println(IDAOPari.findByUtilisateurAndMatch(IDAOUtil.findById(1),IDAOMatch.findById(1)));
-		
+//		System.out.println(IDAOPari.findByUtilisateurAndMatch(IDAOUtil.findById(1),IDAOMatch.findById(1)));
+		System.out.println(IDAOMat.findAll());
+System.out.println(IDAOUtil.findById(1));
+	
+	
 	}
 }

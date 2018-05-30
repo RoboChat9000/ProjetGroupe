@@ -211,7 +211,7 @@ public class Match {
 	
 	public String toString() {
 		String s = "";
-		s =  "Match numéro : " + this.equipeDom;
+		s =  "Match numéro : " + this.id + "équipes : " + this.equipeDom + " et " + this.equipeExt + "\n";
 		return  s;
 	}
 

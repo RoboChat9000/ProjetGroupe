@@ -19,7 +19,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.*;
 import org.springframework.dao.annotation.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-
+import fr.formation2.*;
 
 @Configuration
 @EnableJpaRepositories("DAO_JPA")

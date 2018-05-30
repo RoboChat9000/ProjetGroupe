@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:fr.formation.JPAConfig</config>
+		<config>java:fr.formation2.JPAConfig</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

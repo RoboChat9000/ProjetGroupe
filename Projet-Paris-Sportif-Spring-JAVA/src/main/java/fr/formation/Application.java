@@ -1,6 +1,6 @@
 package fr.formation;
 
-import fr.formation.*;
+import fr.formation2.*;
 
 public class Application
 {
