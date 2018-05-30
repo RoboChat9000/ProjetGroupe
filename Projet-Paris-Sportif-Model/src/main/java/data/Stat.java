@@ -8,6 +8,9 @@ import javax.persistence.*;
 @Table(name="statistiques")
 public class Stat implements Serializable{
 	@Id
+	private Integer id;
+	
+	@MapsId
 	@OneToOne
 	@JoinColumn (name="stat_utilisateur_id")
 	private Utilisateur utilisateur;
