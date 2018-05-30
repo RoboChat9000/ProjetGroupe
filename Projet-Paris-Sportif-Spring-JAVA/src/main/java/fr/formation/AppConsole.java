@@ -2,16 +2,24 @@ package fr.formation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import DAO_JPA.IDAOMatch;
 import DAO_JPA.IDAOPari;
-import data.PariId;
+import DAO_JPA.IDAOUtilisateur;
 
 public class AppConsole
 {
 	@Autowired
 	private IDAOPari IDAOPari;
 	
+	@Autowired
+	private IDAOMatch IDAOMatch;
+	
+	@Autowired
+	private IDAOUtilisateur IDAOUtil;
+	
+	
 	public void run(String[] args) {
-		System.out.println(IDAOPari.findByUtilisateurAndMatch(new PariId(1,1)));
+		System.out.println(IDAOPari.findByUtilisateurAndMatch(IDAOUtil.findById(1),IDAOMatch.findById(1)));
 		
 		
 	}
