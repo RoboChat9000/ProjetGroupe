@@ -2,7 +2,9 @@ package fr.formation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import DAO.*;
+import DAO_JPA.IDAOUtilisateur;
+import DAO_JPA.*;
+import data.Utilisateur;
 
 public class AppConsole
 {

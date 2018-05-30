@@ -22,8 +22,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @Configuration
-@EnableJpaRepositories("DAO")
+@EnableJpaRepositories("DAO_JPA")
 @Import({JPAConfig.class })
+//@ComponentScan({"fr.formation", "DAO_JPA"})
 public class AppConfig {
 
 }

@@ -21,10 +21,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @Configuration
-//@EnableTransactionManagement
-//@ComponentScan({"fr.formation"})
+@EnableTransactionManagement
 @PropertySource("classpath:data-source.properties")
-//@EnableJpaRepositories("DAO")
+@EnableJpaRepositories("DAO_JPA")
 public class JPAConfig {
 
 	@Autowired
@@ -59,7 +58,7 @@ public class JPAConfig {
 		Properties properties = new Properties();
 		properties.setProperty("hibernate.hbm2ddl.auto", "update");
 		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
-		properties.setProperty("hibernate.show_sql", "false");
+		properties.setProperty("hibernate.show_sql", "true");
 		properties.setProperty("hibernate.format_sql", "true");
 		return properties;
 		}
