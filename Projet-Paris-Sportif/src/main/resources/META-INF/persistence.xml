@@ -8,10 +8,8 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/x
 <class>data.Cote </class>
 <class>data.Ligue</class>
 <class>data.Equipe</class>
-<class>data.Main</class>
 <class>data.Match</class>
 <class>data.Pari</class>
-<class>data.Phase</class>
 <class>data.Poule</class>
 <class>data.Stade</class>
 <class>data.Stat</class>
