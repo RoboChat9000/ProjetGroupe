@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -14,6 +15,9 @@ import javax.persistence.Table;
 public class Cote implements Serializable{
 
 	@Id
+	private Integer id;
+	
+	@MapsId
 	@OneToOne
 	@JoinColumn(name="cot_match_id")
 	private Match matchCote;
