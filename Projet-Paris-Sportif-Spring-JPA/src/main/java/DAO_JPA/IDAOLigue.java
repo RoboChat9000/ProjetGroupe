@@ -6,4 +6,5 @@ import data.Ligue;
 
 public interface IDAOLigue extends JpaRepository<Ligue, Integer>{
 
+	public Ligue findByNom (String nom);
 }

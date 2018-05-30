@@ -25,7 +25,7 @@ import javax.validation.constraints.Size;
 
 
 @Entity
-@Table(name="utlisateur")
+@Table(name="utilisateur")
 public class Utilisateur {
 
 	@Id

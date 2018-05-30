@@ -27,6 +27,6 @@ public class AppConsole
 		System.out.println(IDAOPari.findById(new PariId(1,1)));
 //System.out.println(IDAOUtil.findById(1));
 	
-	
+	IDAOUti.rejoinLigue(1, 1);
 	}
 }

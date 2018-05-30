@@ -18,4 +18,7 @@ public class Stat implements Serializable{
 	@Column (name="stat_points", columnDefinition="int")
 	int points;
 	//on va rajouter le reste apres lol
+	
+	public Stat()
+	{}
 }

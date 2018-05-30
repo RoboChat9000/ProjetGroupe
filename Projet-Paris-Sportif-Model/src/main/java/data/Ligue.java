@@ -26,6 +26,11 @@ public class Ligue {
 	@ManyToMany(mappedBy="listLigue")
 	private List<Utilisateur> listUtilisateur;
 	
+	
+	public Ligue()
+	{}
+	
+	
 	public Ligue(int id, String nom) {
 		this.id = id;
 		this.nom = nom;
