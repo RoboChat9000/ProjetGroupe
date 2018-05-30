@@ -9,7 +9,11 @@ import DAO_JPA.IDAOUtilisateur;
 public class AppConsole
 {
 	@Autowired
+	private IDAOUtilisateur IDAOUti;
+	@Autowired
 	private IDAOPari IDAOPari;
+	@Autowired
+	private IDAOMatch IDAOMat;
 	
 	@Autowired
 	private IDAOMatch IDAOMatch;
@@ -20,7 +24,6 @@ public class AppConsole
 	
 	public void run(String[] args) {
 		System.out.println(IDAOPari.findByUtilisateurAndMatch(IDAOUtil.findById(1),IDAOMatch.findById(1)));
-		
 		
 	}
 }
