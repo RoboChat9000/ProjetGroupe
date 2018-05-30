@@ -13,4 +13,5 @@ public interface IDAOPari extends JpaRepository<Pari, PariId>{
 
 	public List<Pari> findAll();
 	public Pari findByUtilisateurAndMatch(Utilisateur u, Match m);
+
 }
