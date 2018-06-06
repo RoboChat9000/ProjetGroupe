@@ -10,7 +10,7 @@ public class Stat implements Serializable{
 	@Id
 	private Integer id;
 	
-	@MapsId
+//	@MapsId
 	@OneToOne
 	@JoinColumn (name="stat_utilisateur_id")
 	private Utilisateur utilisateur;
