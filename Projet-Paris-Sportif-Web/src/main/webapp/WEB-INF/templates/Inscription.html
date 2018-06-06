@@ -4,13 +4,13 @@
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <meta charset="utf-8">
-<title>Connexion</title>
+<title>Inscription</title>
 </head>
 
 <body>
 
 <header>
-<h1 layout:fragment="custom-title">Connectez-vous pour parier!</h1>
+<h1 layout:fragment="custom-title">Creez votre compte!</h1>
 </header>
 
 	<section layout:fragment="custom-content">
@@ -20,11 +20,13 @@
 			<input type="text" name="pseudo" class="form-control" placeholder="ton pseudo ici"/><br>
 			<h4 class="text-center">Mot de passe</h4>
 			<input type="text" name="mdp" class="form-control" placeholder="ton mdp ici"/><br>
-				<input type="submit" value="connexion" class="btn btn-success col-sm-6">
+			<h4 class="text-center">confirme le mot de passe</h4>
+			<input type="text" name="mdpConf" class="form-control" placeholder="ton mdp ici, encore"/><br>
 				
-		</form>
-		<a href="/Projet-Paris-Sportif-Web/Inscription" class="btn btn-primary col-sm-6">Inscription</a>
+				<button type="submit" class="btn btn-primary col-sm-6 center-block" style="float:none">Inscription!</button>
 		
+
+		</form>
 	</section>
 </body>
 </html>

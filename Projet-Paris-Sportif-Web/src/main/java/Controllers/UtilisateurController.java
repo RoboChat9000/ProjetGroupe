@@ -32,8 +32,22 @@ public class UtilisateurController {
 	{
 
 		session.setAttribute("utilisateur", utilisateur);
-		System.out.println("[sysout au niveau de AccountController]" + utilisateur);
+		System.out.println("[sysout au niveau du PostLogin de UtilisateurController]" + utilisateur);
 		return "Accueil";
+	}
+	
+	@GetMapping("/Inscription")
+	public String GetInscription(Model model)
+	{
+		return "/Inscription";
+	}
+	
+	@PostMapping("/Inscription")
+	public String PostInscription(Model model, @ModelAttribute("utilisateur") Utilisateur utilisateur, HttpSession session)
+	{
+		session.setAttribute("utilisateur", utilisateur);
+		System.out.println("[sysout au niveau du PostInscription de UtilisateurController]" + utilisateur);
+		return "/Accueil";
 	}
 }
 	
