@@ -16,8 +16,8 @@ import data.Utilisateur;
 @Controller
 public class UtilisateurController {
 
-//	@Autowired
-//	IDAOUtilisateur IDAOUtil;
+	@Autowired
+	IDAOUtilisateur IDAOUtil;
 	
 	
 	@GetMapping("/Connexion")
@@ -26,14 +26,14 @@ public class UtilisateurController {
 		//model.addAttribute("utilisateur", new Utilisateur());
 		return "Connexion";
 	}
-	/*
+	
 	@PostMapping("/Connexion")
 	public String PostLogin(@ModelAttribute("utilisateur") Utilisateur utilisateur, Model model, HttpSession session)
 	{
 
 		session.setAttribute("utilisateur", utilisateur);
 		System.out.println("[sysout au niveau de AccountController]" + utilisateur);
-		return "redirect:/Accueil";
-	}*/
+		return "Accueil";
+	}
 }
 	
