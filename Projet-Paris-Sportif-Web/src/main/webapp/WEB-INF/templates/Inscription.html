@@ -16,17 +16,85 @@
 	<section layout:fragment="custom-content">
 
 		<form method="POST" class="form-horizontal">
-			<h4 class="text-center">Pseudo</h4>
-			<input type="text" name="pseudo" class="form-control" placeholder="ton pseudo ici"/><br>
-			<h4 class="text-center">Mot de passe</h4>
-			<input type="text" name="mdp" class="form-control" placeholder="ton mdp ici"/><br>
-			<h4 class="text-center">confirme le mot de passe</h4>
-			<input type="text" name="mdpConf" class="form-control" placeholder="ton mdp ici, encore"/><br>
-				
-				<button type="submit" class="btn btn-primary col-sm-6 center-block" style="float:none">Inscription!</button>
-		
 
+
+			<div class="form-group">
+				<div class="form-group col-sm-4">
+					<h4 class="text-center">date de naissance</h4>
+					<input type="date" class="form-control" name="dateNaissance"
+						id="dateNaissance"
+						th:value="${#dates.format(utilisateur.dateNaissance, 'yyyy-MM-dd')}"
+						placeholder="AAAA-MM-JJ"><br>
+				</div>
+				<div class="form-group col-sm-4">
+					<h4 class="text-center">nom</h4>
+					<input type="text" class="form-control" name="nom"
+						th:value="${utilisateur.nom}" id="nom" placeholder="ton nom ici"><br>
+				</div>
+				<div class="form-group col-sm-4">
+					<h4 class="text-center">prenom</h4>
+					<input type="text" class="form-control" name="prenom" id="prenom"
+						th:value="${utilisateur.prenom}" placeholder="ton prenom ici"><br>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="form-group col-sm-6">
+					<h4 class="text-center">mail</h4>
+					<input type="email" name="mail" class="form-control"
+						th:value="${utilisateur.mail}" placeholder="ton mail ici" />
+					<h5>
+						<span style="color: red;" th:errors="${utilisateur.mail}">Mail
+							vide ou deja pris</span>
+					</h5>
+					<br>
+				</div>
+				<div class="form-group col-sm-6">
+					<h4 class="text-center">Pseudo</h4>
+					<input type="text" name="pseudo" class="form-control"
+						th:value="${utilisateur.pseudo}" placeholder="ton pseudo ici" />
+					<h5>
+						<span style="color: red;" th:errors="${utilisateur.pseudo}">pseudo
+							vide ou deja pris</span>
+					</h5>
+					<br>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="form-group col-sm-6">
+					<h4 class="text-center">Mot de passe</h4>
+					<input type="password" name="mdp" id="mdp1" class="form-control"
+						th:value="${utilisateur.mdp}" placeholder="ton mdp ici" /> <input
+						type="checkbox" id="mdp3">Montrer les mdp<br>
+				</div>
+				<div class="form-group col-sm-6">
+					<h4 class="text-center">confirme le mot de passe</h4>
+					<input type="password" name="mdpConf" id="mdp2"
+						class="form-control" th:value="${utilisateur.mdp}"
+						placeholder="ton mdp ici, encore" />
+					<h5>
+						<span style="color: red;" th:errors="${utilisateur.mdp}">les
+							mdp doivent etre identiques</span>
+					</h5>
+					<br>
+				</div>
+				</div>
+				<button type="submit" class="btn btn-primary col-sm-6 center-block"
+					style="float: none">Inscription!</button>
+			
 		</form>
+		<script>document.getElementById ("mdp3").addEventListener ("click", myFunction, false);
+
+		function myFunction() {
+		    var x = document.getElementById("mdp1");
+		    var y = document.getElementById("mdp2");
+		    if (x.type === "password" && y.type === "password") {
+		        x.type = "text";
+		        y.type = "text";
+		    } else {
+		        x.type = "password";
+		        y.type = "password";
+		    }
+		}</script>
 	</section>
 </body>
 </html>

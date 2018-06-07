@@ -17,14 +17,27 @@
 
 		<form method="POST" class="form-horizontal">
 			<h4 class="text-center">Pseudo</h4>
-			<input type="text" name="pseudo" class="form-control" placeholder="ton pseudo ici"/><br>
+			<input type="text" name="pseudo" th:value= "${utilisateur.pseudo}" class="form-control" placeholder="ton pseudo ici"/>
+			<h5><span style="color:red;" th:errors="${utilisateur.pseudo}">pseudo vide</span></h5><br>
 			<h4 class="text-center">Mot de passe</h4>
-			<input type="text" name="mdp" class="form-control" placeholder="ton mdp ici"/><br>
+			<input type="password" name="mdp" id="mdp" th:value= "${utilisateur.mdp}" class="form-control" placeholder="ton mdp ici"/>
+			<input type="checkbox" id="mdp1" >Montrer le mdp
+			<h5><span style="color:red;" th:errors="${utilisateur.mdp}">mdp vide ou invalide</span></h5><br>
 				<input type="submit" value="connexion" class="btn btn-success col-sm-6">
 				
 		</form>
 		<a href="/Projet-Paris-Sportif-Web/Inscription" class="btn btn-primary col-sm-6">Inscription</a>
-		
+		<script>document.getElementById ("mdp1").addEventListener ("click", myFunction, false);
+
+		function myFunction() {
+		    var x = document.getElementById("mdp");
+		    if (x.type === "password") {
+		        x.type = "text";
+		    } else {
+		        x.type = "password";
+		    }
+		}</script>
 	</section>
+	
 </body>
 </html>

@@ -21,7 +21,11 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 
 
 @Entity
@@ -59,7 +63,8 @@ public class Utilisateur {
 	private String prenom;
 	
 	@Column(name="UTI_DATENAISS", columnDefinition="DATE")
-	@NotEmpty
+	@NotNull
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dateNaissance;
 	
 	@ManyToMany
