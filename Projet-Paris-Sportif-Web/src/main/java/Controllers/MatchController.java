@@ -47,6 +47,12 @@ public class MatchController {
 		//
 		Pari pari = daoPari.findById(new PariId(1, idMatch)).get();
 		
+		Date dateActuelle = new Date();
+		Date dateMatch = pari.getMatch().getDate();
+		if(dateActuelle.compareTo(dateMatch) > 0) {
+			model.addAttribute("erreurDate", "erreurDate");
+		}
+		
 		List<Pari> listPari = daoPari.findByLigue(1);
 		model.addAttribute("listPari", listPari);
 		model.addAttribute("pari", pari);
@@ -57,8 +63,6 @@ public class MatchController {
 	
 	@PostMapping("/match")
 	public String getMatch(Model model,
-							@Valid @ModelAttribute Pari pariUtil,
-							BindingResult result,
 							@RequestParam int idMatch,
 							@RequestParam int resultatDom,
 							@RequestParam int resultatExt,
@@ -67,21 +71,12 @@ public class MatchController {
 	{
 		//int idUtilisateur = (Integer)((Utilisateur)session.getAttribute("utilisateur")).getId();
 		//Pari pari = daoPari.findById(new PariId(idUtilisateur, idMatch)).get();
-		//
 		
-		Pari pari = daoPari.findById(new PariId(1, 1)).get();
 		
-		if(result.hasErrors()) {
-			model.addAttribute("idMatch", idMatch);
-			return "redirect:/match";
-		}
-
+		Pari pari = daoPari.findById(new PariId(1, idMatch)).get();
 		pari.setResultatDom(resultatDom);
 		pari.setResultatExt(resultatExt);
-		
-		
-		
-//		
+
 //		SimpleDateFormat d = new SimpleDateFormat ("dd/MM/yyyy hh:mm" );
 //		String date = d.format(currentTime);
 //		System.out.println(date);

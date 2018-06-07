@@ -2,13 +2,12 @@ package Controllers;
 
 import java.util.Date;
 
-import javax.validation.Validation;
-
 import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+import DAO_JPA.IDAOPari;
 import data.Pari;
+import data.PariId;
 
 public class DatePariValidator implements Validator{
 
@@ -20,10 +19,11 @@ public class DatePariValidator implements Validator{
 		
 	}
 	
-	public void validateDate(Object target, Errors errors, Date dateActuelle, Date datePari) {
-		dateActuelle = new Date();
-		if(dateActuelle.compareTo(datePari) < 0) {
-			errors.rejectValue("date", "erreurDate", "le match a déjà commencé !");
+	public void validateDate(Errors errors, Pari pari) {
+		Date dateActuelle = new Date();
+		Date dateMatch = pari.getMatch().getDate();
+		if(dateActuelle.compareTo(dateMatch) < 0) {
+			errors.rejectValue("date", "erreurDatePari", "le match a déjà commencé !");
 		}
 	}
 
