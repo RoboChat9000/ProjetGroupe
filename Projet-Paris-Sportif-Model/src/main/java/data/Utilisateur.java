@@ -12,6 +12,7 @@ import java.util.Scanner;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -67,13 +68,27 @@ public class Utilisateur {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dateNaissance;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
 			name="listUtilisateur", 
 			inverseJoinColumns=@JoinColumn(name="ul_ligue_id", referencedColumnName="lig_id"),
 		    joinColumns=@JoinColumn(name="ul_utilisateur_id", referencedColumnName="uti_id"))
 	private List<Ligue> listLigue = new ArrayList<Ligue>();
 	
+	public List<Ligue> getListLigue() {
+		return listLigue;
+	}
+	public void setListLigue(List<Ligue> listLigue) {
+		this.listLigue = listLigue;
+	}
+	public List<Pari> getLesParis() {
+		return lesParis;
+	}
+	public void setLesParis(List<Pari> lesParis) {
+		this.lesParis = lesParis;
+	}
+
+
 	@OneToMany(mappedBy="utilisateur")
 	private List<Pari> lesParis;
 	
@@ -83,7 +98,7 @@ public class Utilisateur {
 	}
 	@Override
 	public String toString() {
-		String S = pseudo +" "+ mail+" " + nom+" " + prenom;
+		String S = "Pseudo : " + pseudo +" ; mail : "+ mail+" ; Nom : " + nom+" ; prenom : " + prenom + " ; mdp : " + mdp;
 		return S;
 	}
 	public Utilisateur(String pseudo, String mail, String mdp) {

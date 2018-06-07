@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="layout.html" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta charset="utf-8">
+<title>Ligue</title>
+</head>
+
+<body>
+
+<nav layout:fragment="custom-nav">
+</nav>
+
+<header>
+<h1 layout:fragment="custom-title">Gerez toutes vos ligues!</h1>
+</header>
+
+<section id="listeLigueUser" style="display: block" layout:fragment="custom-content">
+<h1>Vos Ligues</h1>
+		<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>nom de la ligue</th>
+        <th>membres</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+			<tr th:each="ligue : ${listeDesLiguesDuUser}">
+				<td th:text="${ligue.nom}" />
+				<td>[[${ligue.listUtilisateur.size()}]]</td>
+				<td><a class="btn btn-primary" th:href="@{detailLigue(id=${ligue.id})}">details</a></td>
+				
+				<td><a class="btn btn-primary" onClick="POST">rejoindre</a>
+				
+				</td>
+			</tr>
+		</table>
+	
+
+
+
+
+		<h1>Toutes les Ligues</h1>
+		<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>nom de la ligue</th>
+        <th>membres</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+			<tr th:each="ligue : ${listeDesLigues}">
+				<td th:text="${ligue.nom}" />
+				<td>[[${ligue.listUtilisateur.size()}]]</td>
+				<td><a class="btn btn-primary" th:href="@{detailLigue(id=${ligue.id})}">details</a></td>
+				
+				<td><a class="btn btn-primary" th:href="@{ligue(id=${ligue.id})}" onClick="POST">rejoindre</a>
+				
+				</td>
+			</tr>
+		</table>
+	</section>
+
+
+</body>
+
+
+</html>

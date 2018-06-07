@@ -1,6 +1,7 @@
 package data;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -23,7 +24,8 @@ public class Ligue {
 	@Size(max=50)
 	private String nom;
 	
-	@ManyToMany(mappedBy="listLigue")
+	
+	@ManyToMany(mappedBy="listLigue", fetch = FetchType.EAGER)
 	private List<Utilisateur> listUtilisateur;
 	
 	

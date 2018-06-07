@@ -68,10 +68,10 @@ public class UtilisateurController {
 			return "Connexion";
 		}*/
 		
-		
-		session.setAttribute("utilisateur", utilisateur);
-		System.out.println("[sysout au niveau du PostLogin de UtilisateurController]" + utilisateur);
-		return "Accueil";
+		Utilisateur u = IDAOUtil.findByPseudo(utilisateur.getPseudo());
+		session.setAttribute("utilisateur", u);
+		System.out.println("[sysout au niveau du PostLogin de UtilisateurController]" + u);
+		return "redirect:/ligue";
 	}
 	
 	@GetMapping("/Inscription")
