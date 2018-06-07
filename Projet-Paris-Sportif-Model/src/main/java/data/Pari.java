@@ -7,38 +7,44 @@ import javax.validation.constraints.*;
 @Entity
 @IdClass(PariId.class)
 public class Pari {
-
 	@Id
-	@NotEmpty
+	@Column(name="par_utilisateur_id")
+	private int utilisateurId;
+	@Id
+	@Column(name="par_match_id")
+	private int matchId;
+	
+	@MapsId
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name="par_utilisateur_id")
 	private Utilisateur utilisateur;
 	
-	//faudra potentiellement rajouter une liste de paris pour la classe match
-	@Id
-	@NotEmpty
+	
+	@MapsId
+	@NotNull
 	@ManyToOne
 	@JoinColumn(name="par_match_id")
 	private Match match;
 	
 	@Column(name="par_result_dom", columnDefinition="INT NOT NULL")
-	@NotEmpty
+	@NotNull(message="resultat dom vide")
 	@Min(0)
 	private int resultatDom;
 	
 	@Column(name="par_result_ext", columnDefinition="INT NOT NULL")
-	@NotEmpty
+	@NotNull(message="resultat ext vide")
 	@Min(0)
 	private int resultatExt;
 	
-	@NotEmpty
+	
 	@OneToOne
 	@JoinColumn(name="par_vainqueur")
 	private Equipe vainqueur;
 	
 	@Column(name="par_DateHeure", columnDefinition="DATETIME")
-	@NotEmpty
-	private String date;
+	@Temporal(TemporalType.DATE)
+	private Date date;
 	
 	public Utilisateur getUtilisateur() {
 		return utilisateur;
@@ -80,11 +86,11 @@ public class Pari {
 		this.vainqueur = vainqueur;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 

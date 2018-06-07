@@ -1,38 +1,31 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-
 <meta charset="UTF-8" />
-
+<base href="/eShop-spring-MVC/" />
 <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Paris Sportifs</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 </head>
 <body>
 
-<!-- <nav layout:fragment="custom-nav">
+<nav layout:fragment="custom-nav">
 <ul>
 <li></li>
-</ul> 
-</nav>-->
+</ul>
 
-<div class="container">
+</nav>
+
 <header>
 <h1 layout:fragment="custom-title">Coucou</h1>
 </header>
-</div>
 
-<div class="container">
 <section layout:fragment="custom-content">
 <p>Le contenu par défaut</p>
 </section>
-</div>
-
 
 <footer layout:fragment="custom-footer">
-<hr/>
 <p>Copyright &copy; Sami, Seb et Leo</p>
 </footer>
-
 
 </body>
 </html>

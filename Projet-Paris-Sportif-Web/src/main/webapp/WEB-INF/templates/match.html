@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorator="layout.html">
+	<head>
+		
+	</head>
+	<body>
+		
+		<header>
+			<h1 layout:fragment="custom-title">Pari match</h1>
+		</header>
+		
+		<section layout:fragment="custom-content">
+			<form id="pariMatch" method="POST">
+				<div class="row">
+				
+					<div class="col-md-1">
+			     	</div>
+			     	
+			     	<div class="col-md-3">
+			     		<p class="EquipeDom" name="EquipeDom">[[${pari.match.equipeDom}]]</p>
+			     	</div>
+			     	
+			     	<div class="col-md-1">
+			      		<input type="number" class="resultatDom" id="resultatDom" name='resultatDom' 
+			      		th:value="${pari.resultatDom}">
+			      	</div>
+			      	
+			      	<div class="col-md-1">
+			      		-
+			      	</div>
+			      	
+			      	<div class="col-md-1">
+			      		<input type="number" class="resultatExt" id="resultatExt" name='resultatExt' 
+			      		th:value="${pari.resultatExt}">
+			      	</div>
+			      	
+			      	<div class="col-md-3">
+			      		<p class="EquipeExt" name="equipeExt">[[${pari.match.equipeExt}]]<p/>
+					</div>
+				</div>
+				
+				<div class="row">
+				
+					<div class="col-md-4">
+			     	</div>
+			     	
+			     	<div class="col-md-1">
+			     		<p class="CoteDom n">[[${pari.match.cote.dom}]]</p>
+			     	</div>
+					
+					<div class="col-md-1">
+			     		<p class="CoteNul" name="coteDom">[[${pari.match.cote.nul}]]</p>
+			     	</div>
+			     	
+			   
+			     	<div class="col-md-1">
+			     		<p class="CoteExt" name="coteExt">[[${pari.match.cote.ext}]]</p>
+			     	</div>
+			     	
+			     	<div class="col-md-5">
+			     	</div>
+			     	
+				</div>
+				
+				<span class="erreur" th:errors="${pari.date}">Message d'erreur par d�faut</span>
+				<br>
+				<div>
+					<button class="btn btn-primary" type="submit">
+						Valider pari
+					</button>
+				</div>
+			</form>
+			
+			<h2>Liste des paris de vos ligues</h2>
+			<br>
+			<table class="table">
+			 			<thead class="thead-dark">
+							<tr>
+								<th width="150">Utilisateur</th>
+								<th width="150">[[${pari.match.equipeDom}]]</th>
+								<th width="150">[[${pari.match.equipeExt}]]</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="par : ${listPari}">
+								<td th:text="${par.utilisateur}" />
+								<td th:text="${par.resultatDom}"></td>
+								<td th:text="${par.resultatExt}"></td>
+							</tr>
+						</tbody>
+			</table>
+			
+		</section>
+		
+		
+	
+	</body>
+</html>
