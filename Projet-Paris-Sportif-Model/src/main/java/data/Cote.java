@@ -28,6 +28,36 @@ public class Cote implements Serializable{
 	@Column(name="COT_NUL")
 	private int nul;
 	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public Match getMatchCote() {
+		return matchCote;
+	}
+	public void setMatchCote(Match matchCote) {
+		this.matchCote = matchCote;
+	}
+	public int getDom() {
+		return dom;
+	}
+	public void setDom(int dom) {
+		this.dom = dom;
+	}
+	public int getNul() {
+		return nul;
+	}
+	public void setNul(int nul) {
+		this.nul = nul;
+	}
+	public int getExt() {
+		return ext;
+	}
+	public void setExt(int ext) {
+		this.ext = ext;
+	}
 	@Column(name="COT_EXT")
 	private int ext;
 	

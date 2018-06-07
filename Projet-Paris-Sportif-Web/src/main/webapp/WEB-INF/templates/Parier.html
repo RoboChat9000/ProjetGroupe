@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="layout.html" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta charset="utf-8">
+
+<title>Parier</title>
+</head>
+<body>
+<header>
+<h1 layout:fragment="custom-title">Les matches !</h1>
+</header>
+
+<section layout:fragment="custom-content">
+<form method="POST">
+	<div class="form-group row">
+    	<label for="Dom" class="col-sm-2  col-form-label">[[${match.equipeDom}]]</label>
+    	<div class="col-sm-2">
+      		<input type="number" class="form-control" id="resultatDom" placeholder="-">
+   			</div>
+   			    	<div class="col-sm-2">
+      		<input type="number" class="form-control" id="resultatExt" placeholder="-">
+   			</div>
+   			<label for="Ext" class="col-sm-2  col-form-label">[[${match.equipeExt}]]</label>
+  		</div>
+  		<br>
+    <div class="col-sm-2"><p>[[${cote.dom}]]</p></div>
+    <div class="col-sm-2"><p>[[${cote.nul}]]</p></div>
+    <div class="col-sm-2"><p>[[${cote.ext}]]</p></div>
+
+  		
+  		
+
+
+      <input type="submit" class="btn btn-primary col-sm-8" value="Valider" >
+
+    </form>	
+
+
+<!-- <div>
+<p th:errors="${pari.resultatDom}"></p>
+  <p th:errors="${pari.resultatExt}"></p>
+  </div> -->
+
+
+</section>
+</body>
+</html>

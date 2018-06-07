@@ -39,6 +39,18 @@ public class Equipe {
 	@OneToMany(mappedBy="equipeExt")
 	private List<Match> matchsExt;
 	
+	public List<Match> getMatchsDom() {
+		return matchsDom;
+	}
+	public void setMatchsDom(List<Match> matchsDom) {
+		this.matchsDom = matchsDom;
+	}
+	public List<Match> getMatchsExt() {
+		return matchsExt;
+	}
+	public void setMatchsExt(List<Match> matchsExt) {
+		this.matchsExt = matchsExt;
+	}
 	public Equipe(Poule poule, String nom) {
 		this.poule = poule;
 		this.nom = nom;

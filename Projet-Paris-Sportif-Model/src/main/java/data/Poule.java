@@ -24,6 +24,12 @@ public class Poule {
 	@OneToMany (mappedBy="poule")
 	List<Equipe> listeEquipes;
 	
+	public List<Equipe> getListeEquipes() {
+		return listeEquipes;
+	}
+	public void setListeEquipes(List<Equipe> listeEquipes) {
+		this.listeEquipes = listeEquipes;
+	}
 	public Poule()
 	{
 		

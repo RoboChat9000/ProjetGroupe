@@ -1,6 +1,7 @@
 package data;
 
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,7 +15,7 @@ import org.hibernate.annotations.Cascade;;
 
 @Entity
 @Table(name="matches")
-public class Match {
+public class Match implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -210,6 +211,7 @@ public class Match {
 	}
 	
 	public String toString() {
+		
 		String s = "";
 		s =  "Match numéro : " + this.id + "équipes : " + this.equipeDom + " et " + this.equipeExt + "\n";
 		return  s;
