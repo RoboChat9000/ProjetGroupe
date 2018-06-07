@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-<base href="/Projet-Paris-Sportif-Web/" />
 <meta charset="UTF-8" />
-
 <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Paris Sportifs</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- <nav layout:fragment="custom-nav">
-<ul>
-<li></li>
-</ul> 
-</nav>-->
+
+
+
+<nav layout:fragment="custom-nav">
+			<div class="pos-f-t">
+				<div class="collapse" id="navbarToggleExternalContent">
+					<div class="bg-dark p-4">
+						<ul>
+							<li><a href="match">match</a></li>
+							<li><a href="Accueil">Accueil</a></li>
+							<li><a href="Connexion">Connexion</a></li>
+						</ul> 
+					</div>
+				</div>
+				<nav class="navbar navbar-dark bg-dark">
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarToggleExternalContent"
+						aria-controls="navbarToggleExternalContent" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</nav>
+			</div>
+</nav>
 
 <div class="container">
 <header>
@@ -27,12 +48,10 @@
 </section>
 </div>
 
-
 <footer layout:fragment="custom-footer">
-<hr/>
+<hr>
 <p>Copyright &copy; Sami, Seb et Leo</p>
 </footer>
-
 
 </body>
 </html>

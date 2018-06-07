@@ -26,6 +26,12 @@ public class Equipe {
 	@Size(max=50)
 	private String nom;
 	
+	@Column(name="EQU_ISO", columnDefinition="VARCHAR(50) NOT NULL DEFAULT 'ru'")
+	@NotEmpty
+	@NotNull
+	@Size(max=50)
+	private String iso;
+	
 	
 	@OneToMany(mappedBy="equipeDom")
 	private List<Match> matchsDom;
@@ -83,5 +89,24 @@ public class Equipe {
 	public String toString() {
 		return this.nom;
 	}
+	public String getIso() {
+		return iso;
+	}
+	public void setIso(String iso) {
+		this.iso = iso;
+	}
+	public List<Match> getMatchsDom() {
+		return matchsDom;
+	}
+	public void setMatchsDom(List<Match> matchsDom) {
+		this.matchsDom = matchsDom;
+	}
+	public List<Match> getMatchsExt() {
+		return matchsExt;
+	}
+	public void setMatchsExt(List<Match> matchsExt) {
+		this.matchsExt = matchsExt;
+	}
+	
 	
 }

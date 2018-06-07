@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorator="layout.html">
+	<head>
+		<link rel="stylesheet" href="css/flags.css" />
+	</head>
+	<body>
+		
+		<header>
+			<h1 layout:fragment="custom-title">Pari match</h1>
+		</header>
+		
+		<section layout:fragment="custom-content">
+			<form id="pariMatch" method="POST">
+				<div class="row">
+				
+					<div class="col-md-1">
+						
+			     	</div>
+			     	
+			     	<div class="col-md-3">
+			     		<p class="EquipeDom" name="EquipeDom">[[${pari.match.equipeDom}]]</p>
+			     	</div>
+			     	<div th:switch="${erreurDate}" class="col-md-3">
+			     		<div th:case="null" class="row">
+			     			<div class="col-md-4">
+			      				<input type="number" class="resultatDom" id="resultatDom" name='resultatDom' 
+			      						th:value="${pari.resultatDom}">
+			      			</div >
+			      	
+			      			<div class="col-md-4">
+			      				-
+			      			</div>
+			      	
+			      			<div class="col-md-4">
+			      				<input type="number" class="resultatExt" id="resultatExt" name='resultatExt' 
+			      						th:value="${pari.resultatExt}">
+			      			</div>
+			     		</div>
+			     		<div th:case="erreurDate">
+			     			<div class="col-md-1">
+			      				<div class="resultatDom" id="resultatDom" name='resultatDom' th:value="${pari.resultatDom}">
+			      					[[${pari.resultatDom}]]
+			      				</div>
+			      			</div>
+			      	
+			      			<div class="col-md-1">
+			      				-
+			      			</div>
+			      	
+			      			<div class="col-md-1">
+			      				<div class="resultatExt" id="resultatExt" name='resultatExt' th:value="${pari.resultatExt}">
+			      					[[${pari.resultatExt}]]
+			      				</div>
+			      			</div>
+			     		</div>
+			     	
+			     	</div>
+			     	
+			      	
+			      	<div class="col-md-2">
+			      		<p class="EquipeExt" name="equipeExt">[[${pari.match.equipeExt}]]<p/>
+					</div>
+					
+					<div class="col-md-1">
+						
+			     	</div>
+				</div>
+				
+				<div class="row">
+				
+					<div class="col-md-1">
+			     	</div>
+			     	
+			     	<div class="col-md-3">
+						<img src="images/blank.gif" th:class="${'flag flag-' + pari.match.equipeDom.iso}" alt="test"/>
+			     	</div>
+			     	
+			     	<div class="col-md-1">
+			     		<p class="CoteDom n">[[${pari.match.cote.dom}]]</p>
+			     	</div>
+					
+					<div class="col-md-1">
+			     		<p class="CoteNul" name="coteDom">[[${pari.match.cote.nul}]]</p>
+			     	</div>
+			     	
+			   
+			     	<div class="col-md-1">
+			     		<p class="CoteExt" name="coteExt">[[${pari.match.cote.ext}]]</p>
+			     	</div>
+			     	
+			     	
+			     	<div class="col-md-5">
+						<img src="images/blank.gif" th:class="${'flag flag-' + pari.match.equipeExt.iso}" alt="test"/>
+			     	</div>
+			     	
+				</div>
+				
+				<div>
+					<span class="erreur" th:errors="${pari.date}">Message d'erreur par défaut</span>
+				</div>
+				<br>
+				<div th:switch="${erreurDate}">
+			     	<div th:case="null">
+						<button class="btn btn-primary" type="submit">
+							Valider pari
+						</button>
+					</div>
+				</div>
+			</form>
+			
+			<h2>Liste des paris de vos ligues</h2>
+			<br>
+			<table class="table">
+			 			<thead class="thead-dark">
+							<tr>
+								<th width="150">Utilisateur</th>
+								<th width="150">[[${pari.match.equipeDom}]]</th>
+								<th width="150">[[${pari.match.equipeExt}]]</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="par : ${listPari}">
+								<td th:text="${par.utilisateur}" />
+								<td th:text="${par.resultatDom}"></td>
+								<td th:text="${par.resultatExt}"></td>
+							</tr>
+						</tbody>
+			</table>
+			
+		</section>
+		
+		
+	
+	</body>
+</html>

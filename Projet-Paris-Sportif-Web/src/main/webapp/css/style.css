@@ -1,1 +1,35 @@
-@charset "ISO-8859-1";
+footer{
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	width: 100%;
+}
+
+input{
+	border: none;
+}
+
+
+
+input:focus {
+     outline:  none;
+     border: none;
+}
+
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Chrome */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button { 
+	-webkit-appearance: none;
+	margin:0;
+}
+
+
+.erreurDate{
+	color: red;
+}

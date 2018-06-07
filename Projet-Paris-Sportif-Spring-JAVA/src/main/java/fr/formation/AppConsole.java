@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import DAO_JPA.IDAOMatch;
 import DAO_JPA.IDAOPari;
 import DAO_JPA.IDAOUtilisateur;
+import data.Pari;
 import data.PariId;
 
 public class AppConsole
@@ -24,9 +25,12 @@ public class AppConsole
 	public void run(String[] args) {
 //		System.out.println(IDAOPari.findByUtilisateurAndMatch(IDAOUtil.findById(1),IDAOMatch.findById(1)));
 //		System.out.println(IDAOMat.findAll());
-		System.out.println(IDAOPari.findById(new PariId(1,1)));
+		Pari pari = IDAOPari.findById(new PariId(1,1)).get();
+		System.out.println(pari.getMatch().getId());
+		pari.setResultatDom(33);
+		IDAOPari.save(pari);
 //System.out.println(IDAOUtil.findById(1));
 	
-	IDAOUti.rejoinLigue(1, 1);
+//	IDAOUti.rejoinLigue(1, 1);
 	}
 }

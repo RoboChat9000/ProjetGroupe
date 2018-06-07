@@ -9,20 +9,24 @@ import javax.validation.constraints.NotEmpty;
 
 public class PariId implements Serializable{
 
+	private int utilisateurId;
+	private int matchId;
 	
-	
-	private Utilisateur utilisateur;
-
-	private Match match;
+//	private Utilisateur utilisateur;
+//
+//	private Match match;
 	
 	public PariId(int idUtilisateur, int idMatch) {
-		this.utilisateur = new Utilisateur();
-		utilisateur.setId(idUtilisateur);
-		this.match = new Match();
-		match.setId(idMatch);
+		this.utilisateurId = idUtilisateur;
+		this.matchId = idMatch;
+		
+//		this.utilisateur = new Utilisateur();
+//		utilisateur.setId(idUtilisateur);
+//		this.match = new Match();
+//		match.setId(idMatch);
 		
 	}
-	
+//	
 	public PariId() {
 		
 	}
