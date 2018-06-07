@@ -107,18 +107,7 @@ public class Equipe {
 	public void setIso(String iso) {
 		this.iso = iso;
 	}
-	public List<Match> getMatchsDom() {
-		return matchsDom;
-	}
-	public void setMatchsDom(List<Match> matchsDom) {
-		this.matchsDom = matchsDom;
-	}
-	public List<Match> getMatchsExt() {
-		return matchsExt;
-	}
-	public void setMatchsExt(List<Match> matchsExt) {
-		this.matchsExt = matchsExt;
-	}
+
 	
 	
 }
