@@ -8,6 +8,7 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import fr.formation.model.Views.CommonView;
+import fr.formation.model.Views.LigueView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,9 +31,9 @@ public class Ligue {
 	@Size(max=50)
 	private String nom;
 	
-	
+	@JsonView(LigueView.class)
 	@ManyToMany(mappedBy="listLigue", fetch = FetchType.EAGER)
-	private List<Utilisateur> listUtilisateur;
+	private List<Utilisateur> list_utilisateur;
 	
 	
 	public Ligue()
@@ -61,11 +62,11 @@ public class Ligue {
 	}
 
 	public List<Utilisateur> getListUtilisateur() {
-		return listUtilisateur;
+		return list_utilisateur;
 	}
 
 	public void setListUtilisateur(List<Utilisateur> listUtilisateur) {
-		this.listUtilisateur = listUtilisateur;
+		this.list_utilisateur = listUtilisateur;
 	}
 	
 	public String toString() {

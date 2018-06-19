@@ -30,6 +30,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import fr.formation.model.Views.CommonView;
+import fr.formation.model.Views.UtilisateurView;
 
 
 
@@ -79,9 +80,11 @@ public class Utilisateur {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dateNaissance;
 	
+	
+	@JsonView(UtilisateurView.class)
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
-			name="listUtilisateur", 
+			name="list_utilisateur", 
 			inverseJoinColumns=@JoinColumn(name="ul_ligue_id", referencedColumnName="lig_id"),
 		    joinColumns=@JoinColumn(name="ul_utilisateur_id", referencedColumnName="uti_id"))
 	private List<Ligue> listLigue = new ArrayList<Ligue>();
@@ -109,7 +112,7 @@ public class Utilisateur {
 	}
 	@Override
 	public String toString() {
-		String S = "Pseudo : " + pseudo +" ; mail : "+ mail+" ; Nom : " + nom+" ; prenom : " + prenom + " ; mdp : " + mdp;
+		String S = "Pseudo : " + pseudo +" ; mail : "+ mail+" ; Nom : " + nom+" ; prenom : " + prenom + " ; mdp : " + mdp +"///";
 		return S;
 	}
 	public Utilisateur(String pseudo, String mail, String mdp) {

@@ -38,7 +38,7 @@ public class LigueController {
 		List<Ligue> listeDesLiguesDuUser = utilisateur.getListLigue();
 		List<Ligue> listeDesLigues = IDAOLig.findAll();
 		
-		
+		//System.out.println(IDAOLig.findAll().get(0).getListUtilisateur());
 		
 		listeDesLiguesDuUser.forEach((ligue) -> listeDesLigues.removeIf((la) -> la.getId() == ligue.getId()));
 		

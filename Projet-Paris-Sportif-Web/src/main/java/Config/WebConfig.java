@@ -17,7 +17,7 @@ import nz.net.ultraq.thymeleaf.LayoutDialect;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("Controllers")
+@ComponentScan({"Controllers", "fr.formation.model"})
 //@EnableJpaRepositories("DAO_JPA")
 public class WebConfig implements WebMvcConfigurer {
 public void addResourceHandlers(ResourceHandlerRegistry registry) {
