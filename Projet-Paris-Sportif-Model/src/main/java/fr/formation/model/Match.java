@@ -27,14 +27,17 @@ public class Match implements Serializable {
 	@Column(name="MAT_ID")
 	protected int id;
 	
+	@JsonView(Views.MatchView.class)
 	@ManyToOne
 	@JoinColumn(name = "mat_equipe_dom_id")
 	protected Equipe equipeDom;
 	
+	@JsonView(Views.MatchView.class)
 	@ManyToOne
 	@JoinColumn(name = "mat_equipe_ext_id")
 	protected Equipe equipeExt;
 	
+	@JsonView(Views.MatchView.class)
 	@ManyToOne
 	@JoinColumn(name = "MAT_stade_ID")
 	protected Stade stade;
@@ -63,6 +66,7 @@ public class Match implements Serializable {
 	@Column(name="MAT_TERMINE", columnDefinition="BOOLEAN DEFAULT 0")
 	protected boolean termine;
 	
+	@JsonView(Views.MatchView.class)
 	@OneToOne (mappedBy = "matchCote", cascade = CascadeType.ALL)
 	protected Cote cote;
 
@@ -222,7 +226,7 @@ public class Match implements Serializable {
 	public String toString() {
 		
 		String s = "";
-		s =  "Match numéro : " + this.id + "équipes : " + this.equipeDom + " et " + this.equipeExt + "\n";
+		s =  "Match numï¿½ro : " + this.id + "ï¿½quipes : " + this.equipeDom + " et " + this.equipeExt + "\n";
 		return  s;
 	}
 
