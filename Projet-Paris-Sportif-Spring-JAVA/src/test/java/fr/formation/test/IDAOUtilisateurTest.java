@@ -17,8 +17,8 @@ import org.springframework.transaction.annotation.Transactional;
 import DAO_JPA.IDAOLigue;
 import DAO_JPA.IDAOMatch;
 import DAO_JPA.IDAOUtilisateur;
-import data.Ligue;
 import fr.formation.AppConfig;
+import fr.formation.model.Ligue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes={ AppConfig.class })

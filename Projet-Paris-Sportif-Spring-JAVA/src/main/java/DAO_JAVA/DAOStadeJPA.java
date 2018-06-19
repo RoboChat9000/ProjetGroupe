@@ -7,7 +7,7 @@ import javax.persistence.EntityTransaction;
 
 import DAO.IDAOStade;
 import DAO_JAVA.HibernateUtils;
-import data.Stade;
+import fr.formation.model.Stade;
 
 public class DAOStadeJPA implements IDAOStade {
 

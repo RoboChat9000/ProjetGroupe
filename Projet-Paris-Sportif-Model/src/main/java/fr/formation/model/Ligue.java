@@ -1,4 +1,4 @@
-package data;
+package fr.formation.model;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;

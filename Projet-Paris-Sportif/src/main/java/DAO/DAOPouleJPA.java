@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import data.Poule;
+import fr.formation.model.Poule;
 
 public class DAOPouleJPA implements IDAOPoule{
 	

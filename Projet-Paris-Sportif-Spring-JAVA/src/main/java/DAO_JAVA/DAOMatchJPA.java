@@ -8,7 +8,7 @@ import javax.persistence.EntityTransaction;
 
 import DAO.HibernateUtils;
 import DAO.IDAOMatch;
-import data.Match;
+import fr.formation.model.Match;
 
 public class DAOMatchJPA implements IDAOMatch{
 

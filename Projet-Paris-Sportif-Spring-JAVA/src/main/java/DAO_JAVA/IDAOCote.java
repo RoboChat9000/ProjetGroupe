@@ -1,8 +1,8 @@
 package DAO_JAVA;
 
 import DAO_JAVA.IDAO;
-import data.Cote;
-import data.Match;
+import fr.formation.model.Cote;
+import fr.formation.model.Match;
 
 
 public interface IDAOCote extends IDAO<Cote, Integer> {

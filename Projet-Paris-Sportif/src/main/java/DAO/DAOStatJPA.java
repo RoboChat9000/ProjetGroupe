@@ -5,7 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import data.Stat;
+import fr.formation.model.Stat;
 
 public class DAOStatJPA implements IDAOStat{
 	

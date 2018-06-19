@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import DAO_JPA.IDAOMatch;
 import DAO_JPA.IDAOPari;
 import DAO_JPA.IDAOUtilisateur;
-import data.Pari;
-import data.PariId;
+import fr.formation.model.Pari;
+import fr.formation.model.PariId;
 
 public class AppConsole
 {

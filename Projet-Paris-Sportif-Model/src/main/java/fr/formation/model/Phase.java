@@ -1,4 +1,4 @@
-package data;
+package fr.formation.model;
 
 
 public enum Phase {

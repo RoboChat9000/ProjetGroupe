@@ -1,11 +1,12 @@
-package data;
+package fr.formation.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
-import data.Equipe;
+
+import fr.formation.model.Equipe;
 @Entity
 @Table(name="poule")
 public class Poule {

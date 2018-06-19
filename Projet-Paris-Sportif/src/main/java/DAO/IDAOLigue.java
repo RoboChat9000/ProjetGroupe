@@ -1,6 +1,6 @@
 package DAO;
 
-import data.Ligue;
+import fr.formation.model.Ligue;
 
 public interface IDAOLigue extends IDAO<Ligue, Integer>{
 

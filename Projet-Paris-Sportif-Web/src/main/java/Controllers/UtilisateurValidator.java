@@ -14,7 +14,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 
 import DAO_JPA.IDAOUtilisateur;
-import data.Utilisateur;
+import fr.formation.model.Utilisateur;
 
 
 

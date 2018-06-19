@@ -1,7 +1,8 @@
 package DAO;
 
 import java.util.List;
-import data.Stat;
+
+import fr.formation.model.Stat;
 
 public interface IDAOStat extends IDAO<Stat, Integer> {
 

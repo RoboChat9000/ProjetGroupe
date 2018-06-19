@@ -6,8 +6,8 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import DAO_JPA.IDAOPari;
-import data.Pari;
-import data.PariId;
+import fr.formation.model.Pari;
+import fr.formation.model.PariId;
 
 public class DatePariValidator implements Validator{
 

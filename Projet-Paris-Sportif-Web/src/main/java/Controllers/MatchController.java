@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import DAO_JPA.IDAOPari;
-import data.Pari;
-import data.PariId;
+import fr.formation.model.Pari;
+import fr.formation.model.PariId;
 
 
 @Controller

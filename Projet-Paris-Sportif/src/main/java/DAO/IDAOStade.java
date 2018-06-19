@@ -1,6 +1,6 @@
 package DAO;
 
-import data.Stade;
+import fr.formation.model.Stade;
 
 public interface IDAOStade extends IDAO<Stade, Integer> {
 

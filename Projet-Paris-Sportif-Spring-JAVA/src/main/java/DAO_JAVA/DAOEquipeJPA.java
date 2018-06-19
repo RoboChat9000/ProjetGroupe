@@ -7,7 +7,7 @@ import javax.persistence.EntityTransaction;
 
 import DAO.IDAOEquipe;
 import DAO_JAVA.HibernateUtils;
-import data.Equipe;
+import fr.formation.model.Equipe;
 
 public class DAOEquipeJPA implements IDAOEquipe {
 

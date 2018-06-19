@@ -1,4 +1,4 @@
-package data;
+package fr.formation.model;
 
 import java.util.ArrayList;
 import java.util.List;

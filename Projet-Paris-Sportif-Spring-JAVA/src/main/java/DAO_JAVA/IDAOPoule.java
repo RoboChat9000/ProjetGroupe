@@ -3,7 +3,7 @@ package DAO_JAVA;
 import java.util.List;
 
 import DAO.IDAO;
-import data.Poule;
+import fr.formation.model.Poule;
 
 public interface IDAOPoule extends IDAO<Poule, Integer> {
 public Poule findById(Integer id);

@@ -6,7 +6,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import data.Match;
+import fr.formation.model.Match;
 
 public class DAOMatchJPA implements IDAOMatch{
 

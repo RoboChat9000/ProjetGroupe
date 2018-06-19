@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 import DAO.HibernateUtils;
-import data.Ligue;
+import fr.formation.model.Ligue;
 
 
 public class DAOLigueJPA implements IDAOLigue {

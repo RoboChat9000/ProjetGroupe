@@ -20,8 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import DAO_JPA.IDAOCote;
 import DAO_JPA.IDAOMatch;
 import DAO_JPA.IDAOPari;
-
-import data.Pari;
+import fr.formation.model.Pari;
 
 
 

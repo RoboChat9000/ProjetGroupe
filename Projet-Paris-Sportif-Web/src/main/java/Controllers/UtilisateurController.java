@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import DAO_JPA.IDAOUtilisateur;
-import data.Utilisateur;
+import fr.formation.model.Utilisateur;
 
 
 @Controller

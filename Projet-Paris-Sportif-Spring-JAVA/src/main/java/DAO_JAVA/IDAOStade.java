@@ -1,7 +1,7 @@
 package DAO_JAVA;
 
 import DAO.IDAO;
-import data.Stade;
+import fr.formation.model.Stade;
 
 public interface IDAOStade extends IDAO<Stade, Integer> {
 

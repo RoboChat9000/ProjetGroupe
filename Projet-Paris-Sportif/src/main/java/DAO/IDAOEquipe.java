@@ -1,6 +1,6 @@
 package DAO;
 
-import data.Equipe;
+import fr.formation.model.Equipe;
 
 public interface IDAOEquipe extends IDAO<Equipe, Integer> {
 

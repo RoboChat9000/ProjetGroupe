@@ -9,8 +9,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import DAO_JPA.IDAOPari;
-import data.PariId;
 import fr.formation.AppConfig;
+import fr.formation.model.PariId;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes={ AppConfig.class })

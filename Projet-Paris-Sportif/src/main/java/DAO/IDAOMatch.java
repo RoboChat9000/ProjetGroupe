@@ -2,7 +2,7 @@ package DAO;
 
 import java.util.List;
 
-import data.Match;
+import fr.formation.model.Match;
 
 public interface IDAOMatch extends IDAO<Match, Integer> {
 public Match findById(Integer id);

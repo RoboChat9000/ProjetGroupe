@@ -16,9 +16,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
-import data.Ligue;
-import data.Utilisateur;
 import DAO.HibernateUtils;
+import fr.formation.model.Ligue;
+import fr.formation.model.Utilisateur;
 
 public class DAOUtilisateur {
 	

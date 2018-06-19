@@ -13,7 +13,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 import DAO.*;
-import data.*;
+import fr.formation.model.*;
 
 public class Main {
 

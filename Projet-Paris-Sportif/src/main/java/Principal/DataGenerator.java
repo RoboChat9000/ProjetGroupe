@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 
 import DAO.*;
-import data.*;
+import fr.formation.model.*;
 
 public class DataGenerator {
 	/*public static void main(String[] args) throws SQLException, ParseException { 

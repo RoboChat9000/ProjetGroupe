@@ -4,10 +4,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-
-
-import data.Cote;
-import data.Match;
+import fr.formation.model.Cote;
+import fr.formation.model.Match;
 
 public interface IDAOCote extends JpaRepository<Cote,Integer>{
 	

@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
 import DAO.HibernateUtils;
-import data.Cote;
+import fr.formation.model.Cote;
 
 public class DAOCoteJPA implements IDAOCote {
 

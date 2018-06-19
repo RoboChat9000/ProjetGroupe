@@ -4,7 +4,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import data.Pari;
+import fr.formation.model.Pari;
 
 
 public class PariValidator implements Validator {

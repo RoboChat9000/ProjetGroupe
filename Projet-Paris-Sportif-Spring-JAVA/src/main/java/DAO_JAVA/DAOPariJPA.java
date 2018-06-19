@@ -7,8 +7,8 @@ import javax.persistence.EntityTransaction;
 
 import DAO.HibernateUtils;
 import DAO.IDAOPari;
-import data.Pari;
-import data.PariId;
+import fr.formation.model.Pari;
+import fr.formation.model.PariId;
 
 public class DAOPariJPA implements IDAOPari{
 	

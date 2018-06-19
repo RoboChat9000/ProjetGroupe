@@ -5,8 +5,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-import data.Pari;
-import data.PariId;
+import fr.formation.model.Pari;
+import fr.formation.model.PariId;
 
 public class DAOPariJPA implements IDAOPari{
 	

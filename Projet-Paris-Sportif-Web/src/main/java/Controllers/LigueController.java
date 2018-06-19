@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import DAO_JPA.IDAOLigue;
 import DAO_JPA.IDAOUtilisateur;
-import data.Ligue;
-import data.Utilisateur;
+import fr.formation.model.Ligue;
+import fr.formation.model.Utilisateur;
 
 @Controller
 public class LigueController {
@@ -57,7 +57,7 @@ public class LigueController {
 	{ 
 		Ligue laLigueARejoindre = (IDAOLig.findById(id).get());
 		listeDesLiguesDuUser.add(laLigueARejoindre);
-		listeDesLigues.remove(laLigueARejoindre);
+		listeDesLiguesDuUser.forEach((ligue) -> listeDesLigues.removeIf((la) -> la.getId() == ligue.getId()));
 		return "/ligue";
 	}
 }
