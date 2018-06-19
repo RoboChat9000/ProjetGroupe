@@ -23,7 +23,6 @@ public class Cote implements Serializable{
 	@Id
 	private Integer id;
 	
-	@JsonView(MatchView.class)
 	@MapsId
 	@OneToOne
 	@JoinColumn(name="cot_match_id")
@@ -36,6 +35,10 @@ public class Cote implements Serializable{
 	@JsonView(CommonView.class)
 	@Column(name="COT_NUL")
 	private int nul;
+	
+	@JsonView(CommonView.class)
+	@Column(name="COT_EXT")
+	private int ext;
 	
 	public Integer getId() {
 		return id;
@@ -67,8 +70,7 @@ public class Cote implements Serializable{
 	public void setExt(int ext) {
 		this.ext = ext;
 	}
-	@Column(name="COT_EXT")
-	private int ext;
+	
 	
 /*	private int vainqueurDom;
 	private int vainqueurExt;*/

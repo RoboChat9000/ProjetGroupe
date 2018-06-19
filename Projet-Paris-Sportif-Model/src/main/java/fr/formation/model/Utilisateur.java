@@ -228,7 +228,7 @@ public Utilisateur(String pseudo, String mail, String mdp, String nom, String pr
 //			}
 //			else
 //			{
-//				System.out.println("mot de passe incorrect, veuillez réessayer");
+//				System.out.println("mot de passe incorrect, veuillez rï¿½essayer");
 //			}
 //		}
 //		return daoUtil.select(pseudo);
@@ -247,7 +247,7 @@ public Utilisateur(String pseudo, String mail, String mdp, String nom, String pr
 //		pseudo = sc.nextLine();
 //		cont = daoUtil2.verifPseudo(pseudo);
 //		if (cont == false)
-//			System.out.println("ce pseudo est déjà pris, veuillez en saisir un autre");
+//			System.out.println("ce pseudo est dï¿½jï¿½ pris, veuillez en saisir un autre");
 //		}
 //		
 //		System.out.println("Veuillez saisir votre mail : ");
@@ -284,7 +284,7 @@ public Utilisateur(String pseudo, String mail, String mdp, String nom, String pr
 //	    }
 //	    catch (Exception e1)
 //	    {
-//	    	System.out.println("erreur, veuillez saisir une date de naissance en format année-mois-jour");
+//	    	System.out.println("erreur, veuillez saisir une date de naissance en format annï¿½e-mois-jour");
 //	    }
 //		
 //		DAODataSql daoUtil = new DAODataSql();
@@ -299,7 +299,7 @@ public Utilisateur(String pseudo, String mail, String mdp, String nom, String pr
 //	public static void rejoinLigue (Utilisateur U) throws SQLException
 //	{
 //		Scanner sc = new Scanner(System.in);
-//		System.out.println("sélectionnez l'ID d'une ligue à rejoindre : ");
+//		System.out.println("sï¿½lectionnez l'ID d'une ligue ï¿½ rejoindre : ");
 //		DAODataSql daoUtil3 = new DAODataSql();
 //		System.out.println(daoUtil3.listLigue());
 //		int choixLig = sc.nextInt();

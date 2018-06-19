@@ -22,13 +22,14 @@ public class Pari {
 	@Column(name="par_match_id")
 	private int matchId;
 	
+	@JsonView(Views.PariView.class)
 	@MapsId
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name="par_utilisateur_id")
 	private Utilisateur utilisateur;
 	
-	
+	@JsonView(Views.MatchView.class)
 	@MapsId
 	@NotNull
 	@ManyToOne
@@ -112,6 +113,14 @@ public class Pari {
 		this.resultatExt = resultatExt;
 		this.vainqueur = vainqueur;
 	
+	}
+	
+	
+	public Pari(Utilisateur utilisateur, Match match, int resultatDom, int resultatExt) {
+		this.utilisateur = utilisateur;
+		this.match = match;
+		this.resultatDom = resultatDom;
+		this.resultatExt = resultatExt;
 	}
 
 	public void parier()
