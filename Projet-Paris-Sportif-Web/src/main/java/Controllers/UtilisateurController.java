@@ -25,9 +25,6 @@ import fr.formation.model.Utilisateur;
 @Controller
 public class UtilisateurController {
 
-	//TO DO
-	//refaire la verif mdp connexion
-	//garder les valeurs saisies par l'util pour l'inscription
 	
 	@Autowired
 	IDAOUtilisateur IDAOUtil;
