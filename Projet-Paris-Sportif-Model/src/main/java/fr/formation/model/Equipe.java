@@ -6,10 +6,15 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.  *;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import fr.formation.model.Views.CommonView;
+
 @Entity
 @Table(name="equipe")
 public class Equipe {
 
+	@JsonView(CommonView.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="EQU_ID")
@@ -20,12 +25,14 @@ public class Equipe {
 	@JoinColumn(name = "equ_poule_ID")
 	private Poule poule;
 	
+	@JsonView(CommonView.class)
 	@Column(name="EQU_NOM", columnDefinition="VARCHAR(50) NOT NULL DEFAULT 'INCONNU'")
 	@NotEmpty
 	@NotNull
 	@Size(max=50)
 	private String nom;
 	
+	@JsonView(CommonView.class)
 	@Column(name="EQU_ISO", columnDefinition="VARCHAR(50) NOT NULL DEFAULT 'ru'")
 	@NotEmpty
 	@NotNull

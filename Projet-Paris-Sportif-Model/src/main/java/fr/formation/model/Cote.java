@@ -10,21 +10,30 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import fr.formation.model.Views.CommonView;
+import fr.formation.model.Views.MatchView;
+
 @Entity
 @Table(name="Cote")
 public class Cote implements Serializable{
 
+	@JsonView(CommonView.class)
 	@Id
 	private Integer id;
 	
+	@JsonView(MatchView.class)
 	@MapsId
 	@OneToOne
 	@JoinColumn(name="cot_match_id")
 	private Match matchCote;
 	
+	@JsonView(CommonView.class)
 	@Column(name="COT_DOM")
 	private int dom;
 	
+	@JsonView(CommonView.class)
 	@Column(name="COT_NUL")
 	private int nul;
 	

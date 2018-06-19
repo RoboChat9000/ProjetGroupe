@@ -6,16 +6,21 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import fr.formation.model.Equipe;
+import fr.formation.model.Views.CommonView;
 @Entity
 @Table(name="poule")
 public class Poule {
 
+	@JsonView(CommonView.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="POU_ID")
 	private int id;
 	
+	@JsonView(CommonView.class)
 	@Column(name="POU_NOM", columnDefinition="VARCHAR(50) NOT NULL DEFAULT 'INCONNU'")
 	@NotEmpty
 	@NotNull

@@ -27,42 +27,53 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import fr.formation.model.Views.CommonView;
+
 
 
 @Entity
 @Table(name="utilisateur")
 public class Utilisateur {
 
+	@JsonView(CommonView.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="UTI_ID")
 	private int id;
 	
+	@JsonView(CommonView.class)
 	@Column(name="UTI_PSEUDO", columnDefinition="VARCHAR(50)")
 	@NotEmpty
 	@Size(max=50)
 	private String pseudo;
 	
+	@JsonView(CommonView.class)
 	@Column(name="UTI_MAIL", columnDefinition="VARCHAR(50)")
 	@NotEmpty
 	@Size(max=50)
 	private String mail;
 	
+	@JsonView(CommonView.class)
 	@Column(name="UTI_MDP", columnDefinition="VARCHAR(50)")
 	@NotEmpty
 	@Size(max=50)
 	private String mdp; 
 	
+	@JsonView(CommonView.class)
 	@Column(name="UTI_NOM", columnDefinition="VARCHAR(50)")
 	@NotEmpty
 	@Size(max=50)
 	private String nom;
 	
+	@JsonView(CommonView.class)
 	@Column(name="UTI_PRENOM", columnDefinition="VARCHAR(50)")
 	@NotEmpty
 	@Size(max=50)
 	private String prenom;
 	
+	@JsonView(CommonView.class)
 	@Column(name="UTI_DATENAISS", columnDefinition="DATE")
 	@NotNull
 	@DateTimeFormat(pattern="yyyy-MM-dd")

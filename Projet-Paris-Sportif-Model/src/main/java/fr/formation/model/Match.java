@@ -11,12 +11,17 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.Cascade;;
+import org.hibernate.annotations.Cascade;
+
+import com.fasterxml.jackson.annotation.JsonView;
+
+import fr.formation.model.Views.CommonView;;
 
 @Entity
 @Table(name="matches")
 public class Match implements Serializable {
 
+	@JsonView(CommonView.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="MAT_ID")
@@ -34,23 +39,27 @@ public class Match implements Serializable {
 	@JoinColumn(name = "MAT_stade_ID")
 	protected Stade stade;
 	
-	
+	@JsonView(CommonView.class)
 	@Enumerated(EnumType.STRING)
 	@Column(name="MAT_PHASE")
 	protected Phase phase;
 	
+	@JsonView(CommonView.class)
 	@Column(name="MAT_DATEHEURE", nullable=true, columnDefinition="DATETIME DEFAULT CURRENT_TIMESTAMP")
 	@Temporal(TemporalType.DATE)
 	protected Date date;
 	
+	@JsonView(CommonView.class)
 	@Column(name="MAT_RESULTAT_DOM", columnDefinition="INT DEFAULT 0")
 	@NotEmpty
 	protected int resultatDom;
 	
+	@JsonView(CommonView.class)
 	@Column(name="MAT_RESULTAT_EXT", columnDefinition="INT DEFAULT 0")
 	@NotEmpty
 	protected int resultatExt;
 	
+	@JsonView(CommonView.class)
 	@Column(name="MAT_TERMINE", columnDefinition="BOOLEAN DEFAULT 0")
 	protected boolean termine;
 	

@@ -5,6 +5,10 @@ import javax.transaction.Transactional;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
+import fr.formation.model.Views.CommonView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,11 +18,13 @@ import java.util.List;
 
 public class Ligue {
 	
+	@JsonView(CommonView.class)
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="LIG_ID")
 	private int id;
 	
+	@JsonView(CommonView.class)
 	@Column(name="LIG_NOM", columnDefinition="VARCHAR(50)")
 	@NotEmpty
 	@Size(max=50)

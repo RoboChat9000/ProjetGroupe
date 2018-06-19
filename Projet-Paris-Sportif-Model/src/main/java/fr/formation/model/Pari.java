@@ -4,12 +4,20 @@ import java.util.Date;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+
+import com.fasterxml.jackson.annotation.JsonView;
+
+import fr.formation.model.Views.CommonView;
 @Entity
 @IdClass(PariId.class)
 public class Pari {
+	
+	@JsonView(CommonView.class)
 	@Id
 	@Column(name="par_utilisateur_id")
 	private int utilisateurId;
+	
+	@JsonView(CommonView.class)
 	@Id
 	@Column(name="par_match_id")
 	private int matchId;
@@ -27,11 +35,13 @@ public class Pari {
 	@JoinColumn(name="par_match_id")
 	private Match match;
 	
+	@JsonView(CommonView.class)
 	@Column(name="par_result_dom", columnDefinition="INT NOT NULL")
 	@NotNull(message="resultat dom vide")
 	@Min(0)
 	private int resultatDom;
 	
+	@JsonView(CommonView.class)
 	@Column(name="par_result_ext", columnDefinition="INT NOT NULL")
 	@NotNull(message="resultat ext vide")
 	@Min(0)
@@ -42,6 +52,7 @@ public class Pari {
 	@JoinColumn(name="par_vainqueur")
 	private Equipe vainqueur;
 	
+	@JsonView(CommonView.class)
 	@Column(name="par_DateHeure", columnDefinition="DATETIME")
 	@Temporal(TemporalType.DATE)
 	private Date date;
