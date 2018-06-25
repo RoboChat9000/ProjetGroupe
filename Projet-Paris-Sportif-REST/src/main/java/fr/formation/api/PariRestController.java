@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,7 @@ import fr.formation.model.Pari;
 import fr.formation.model.Utilisateur;
 import fr.formation.model.Views;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/pari")
 public class PariRestController {
