@@ -1,3 +1,97 @@
-<p>
-  utilisateur works!
-</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <title>Connexion</title>
+</head>
+
+<body>
+<nav >
+</nav>
+<header>
+  <h1>Connectez-vous pour parier!</h1>
+</header>
+<section *ngIf="visibilitylogin">
+
+    <h4 class="text-center">Pseudo</h4>
+    <input type="text" name="pseudo" [(ngModel)]= "formUtilisateur.pseudo" class="form-control" placeholder="ton pseudo ici"/>
+
+    <h4 class="text-center">Mot de passe</h4>
+    <input type="password" name="mdp" id="mdp" [(ngModel)]= "formUtilisateur.mdp" class="form-control" placeholder="ton mdp ici"/>
+    <input type="checkbox" id="mdp4" >Montrer le mdp
+
+    <input type="submit" (click)="login(formUtilisateur)" class="btn btn-success col-sm-6">
+
+  <button class="btn btn-primary col-sm-6" (click)="visibility()">Inscription</button>
+  <script>document.getElementById ("mdp1").addEventListener ("click", myFunction, false);
+
+  function myFunction() {
+    var x = document.getElementById("mdp");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }</script>
+</section>
+
+<section *ngIf="visibilityInscription">
+
+  <div class="form-group">
+    <div class="form-group col-sm-4">
+      <h4 class="text-center">date de naissance</h4>
+      <input type="date" class="form-control" name="dateNaissance"
+             id="dateNaissance"
+             [(ngModel)]="formUtilisateur.dateNaiss"
+             placeholder="AAAA-MM-JJ"><br>
+    </div>
+    <div class="form-group col-sm-4">
+      <h4 class="text-center">nom</h4>
+      <input type="text" class="form-control" name="nom"
+             [(ngModel)]="formUtilisateur.nom" id="nom" placeholder="ton nom ici"><br>
+    </div>
+    <div class="form-group col-sm-4">
+      <h4 class="text-center">prenom</h4>
+      <input type="text" class="form-control" name="prenom" id="prenom"
+             [(ngModel)]="formUtilisateur.prenom" placeholder="ton prenom ici"><br>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-group col-sm-6">
+      <h4 class="text-center">mail</h4>
+      <input type="email" name="mail" class="form-control"
+             [(ngModel)]="formUtilisateur.mail" placeholder="ton mail ici" />
+      <br>
+    </div>
+    <div class="form-group col-sm-6">
+      <h4 class="text-center">Pseudo</h4>
+      <input type="text" name="pseudo" class="form-control"
+             [(ngModel)]="formUtilisateur.pseudo" placeholder="ton pseudo ici" />
+
+      <br>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-group col-sm-6">
+      <h4 class="text-center">Mot de passe</h4>
+      <input type="password" name="mdp" id="mdp1" class="form-control"
+             [(ngModel)]="formUtilisateur.mdp" placeholder="ton mdp ici" /> <input
+      type="checkbox" id="mdp3">Montrer les mdp<br>
+    </div>
+    <div class="form-group col-sm-6">
+      <h4 class="text-center">confirme le mot de passe</h4>
+      <input type="password" name="mdpConf" id="mdp2"
+             class="form-control" [(ngModel)]="mdpConf"
+             placeholder="ton mdp ici, encore" />
+      <br>
+    </div>
+  </div>
+  <button type="submit" (click)="inscription(formUtilisateur)" class="btn btn-primary col-sm-6 center-block"
+          style="float: none">Inscription!</button>
+  <br>
+  <button class="btn btn-primary col-sm-6" (click)="visibility()">Login</button>
+
+</section>
+</body>
+</html>
