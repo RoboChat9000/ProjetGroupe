@@ -16,6 +16,7 @@ export class UtilisateurComponent implements OnInit {
 public visibilityInscription: boolean = false;
   public visibilitylogin: boolean = true;
   public mdpConf: string;
+public pseudoError: boolean;
 
   constructor(public utilisateurService: UtilisateurService, private router: Router) {
     this.list();
@@ -35,12 +36,13 @@ public visibilityInscription: boolean = false;
     this.utilisateurService.login(this.formUtilisateur).subscribe(resp => {
       this.formUtilisateur = resp;
       localStorage.setItem('utilisateur', JSON.stringify(this.formUtilisateur));
-      this.router.navigateByUrl('<path_to_homepage>');
+     // alert(JSON.parse(localStorage.getItem('utilisateur')).id);
+      this.router.navigateByUrl('/match/' + this.formUtilisateur.id);
     });
   }
 
   public inscription() {
-    if (this.mdpConf === this.formUtilisateur.mdp && this.utilisateurService.verifPseudoBDD(this.formUtilisateur.pseudo)) {
+    if (this.mdpConf === this.formUtilisateur.mdp && this.utilisateurService.getPseudoError() === true) {
       this.utilisateurService.create(this.formUtilisateur).subscribe(resp => {
         this.formUtilisateur = resp;
         localStorage.setItem('utilisateur', JSON.stringify(this.formUtilisateur));
@@ -59,4 +61,18 @@ public visibilityInscription: boolean = false;
   }
   }
 
+  public getPseudoError(): boolean
+  {
+    this.utilisateurService.verifPseudoBDD(this.formUtilisateur.pseudo);
+    this.pseudoError =  this.utilisateurService.getPseudoError(this.formUtilisateur.pseudo)
+    return this.pseudoError;
+  }
+
+  /*
+public verifPseudoBDD()
+{
+  alert(this.utilisateurService.verifPseudoBDD(this.formUtilisateur.pseudo));
+  this.pseudoError = this.utilisateurService.verifPseudoBDD(this.formUtilisateur.pseudo);
+  alert(this.pseudoError);
+}*/
 }

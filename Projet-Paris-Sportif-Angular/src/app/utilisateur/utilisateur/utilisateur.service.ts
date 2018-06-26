@@ -3,12 +3,14 @@ import {HttpClient} from '@angular/common/http';
 import {AppConfigService} from 'src/app/app-config.service';
 import {Observable} from 'rxjs';
 import {Utilisateur} from '../../model/Utilisateur';
+import {UtilisateurComponent} from './utilisateur.component';
 
 @Injectable()
 export class UtilisateurService {
 
  constructor(private appConfig: AppConfigService, private http: HttpClient) { }
 
+  public pseudoError: boolean = false;
 
   public findAll(): Observable<Utilisateur[]> {
     return this.http.get<Utilisateur[]>(`${this.appConfig.url}/`);
@@ -30,22 +32,20 @@ export class UtilisateurService {
     return this.http.delete<void>(`${this.appConfig.url}/` + id);
   }
 
-  public verifPseudoBDD(pseudo: string): boolean
+  public verifPseudoBDD(pseudo: string): void
   {
-    this.http.get<Utilisateur>(`${this.appConfig.url}/inscription/` + pseudo).subscribe(resp => {
-        if (resp === false) {
-          return false;
-        } else {
-          return true;
-        }
-      }
-    );
-    return false;
+   this.http.get<boolean>(`${this.appConfig.url}/inscription/` + pseudo).subscribe(resp => this.pseudoError = resp);
   }
 
   public login(utilisateur: Utilisateur): Observable<Utilisateur> {
     return this.http.post<Utilisateur>(`${this.appConfig.url}/login/`, utilisateur);
   }
+
+  public getPseudoError(pseudo: string):boolean
+  {
+    return this.pseudoError;
+  }
+
 }
 
 

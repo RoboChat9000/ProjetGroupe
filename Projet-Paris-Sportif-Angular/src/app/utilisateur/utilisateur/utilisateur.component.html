@@ -67,7 +67,8 @@
     <div class="form-group col-sm-6">
       <h4 class="text-center">Pseudo</h4>
       <input type="text" name="pseudo" class="form-control"
-             [(ngModel)]="formUtilisateur.pseudo" placeholder="ton pseudo ici" />
+             [(ngModel)]="formUtilisateur.pseudo" placeholder="ton pseudo ici" (change)="getPseudoError(formUtilisateur.pseudo)"/>
+      <h4 *ngIf="pseudoError">Ce pseudo est deja pris</h4>
 
       <br>
     </div>
@@ -87,7 +88,7 @@
       <br>
     </div>
   </div>
-  <button type="submit" (click)="inscription(formUtilisateur)" class="btn btn-primary col-sm-6 center-block"
+  <button type="submit" (click)="inscription()" class="btn btn-primary col-sm-6 center-block"
           style="float: none">Inscription!</button>
   <br>
   <button class="btn btn-primary col-sm-6" (click)="visibility()">Login</button>
