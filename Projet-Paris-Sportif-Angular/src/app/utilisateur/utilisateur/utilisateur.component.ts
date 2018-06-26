@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 })
 export class UtilisateurComponent implements OnInit {
 
-  public formUtilisateur: Utilisateur = null;
+  public formUtilisateur: Utilisateur = new Utilisateur(null, 'bla', null, 'bla', null, null, null);
   public utilisateurs: Array<Utilisateur>;
 public visibilityInscription: boolean = false;
   public visibilitylogin: boolean = true;
