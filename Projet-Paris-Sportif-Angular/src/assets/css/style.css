@@ -1,0 +1,32 @@
+.valide{
+  color: green;
+}
+
+.nonValide{
+  color: red;
+}
+
+input{
+  border: none;
+}
+
+
+
+input:focus {
+  outline:  none;
+  border: none;
+}
+
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Chrome */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin:0;
+}
+

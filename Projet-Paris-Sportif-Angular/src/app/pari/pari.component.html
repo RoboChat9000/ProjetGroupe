@@ -1,4 +1,81 @@
-<p>
-  Resultat dom : {{pari.resultatDom}}
-  Resultat Ext : {{pari.resultatExt}}
-</p>
+<section>
+  <br>
+
+  <h1><span class="badge badge-danger">Vos paris !</span></h1>
+  <br>
+  <form id="pariMatch">
+    <div class="row">
+      <div class="col-md-1">
+
+      </div>
+
+      <div class="col-md-3">
+        <p class="EquipeDom" name="EquipeDom">{{pari.match.equipeDom.nom}}</p>
+      </div>
+          <div class="col-md-1">
+            <input type="number" class="resultatDom" id="resultatDom" name='resultatDom'
+                   [(ngModel)] = "pari.resultatDom">
+          </div >
+
+          <div class="col-md-2">
+            -
+          </div>
+
+          <div class="col-md-1">
+            <input type="number" class="resultatExt" id="resultatExt" name='resultatExt'
+                   [(ngModel)] = "pari.resultatExt">
+          </div>
+
+      <div class="col-md-4">
+        <p class="EquipeExt" name="EquipeExt">{{pari.match.equipeExt.nom}}</p>
+      </div>
+
+
+      </div>
+
+    <div class="row">
+      <div class="col-md-1">
+
+      </div>
+        <div *ngIf="pari.date">
+            <button class="btn btn-primary" (click)="modifierPari(pari)">
+              Valider pari
+            </button>
+        </div>
+
+      <div *ngIf ="!pari.date">
+        <button class="btn btn-primary" (click)="creerPari(pari)">
+          Valider pari
+        </button>
+      </div>
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="col-md-1">
+
+      </div>
+      <div *ngIf="[validation] == 'valide'" class = "valide"> Pari validé ! </div>
+      <div *ngIf="[validation] == 'nonValide'" class = "nonValide"> Too late bro ! </div>
+    </div>
+  </form>
+
+
+  <h2>Liste des paris de vos ligues</h2>
+  <br>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th width="150">Utilisateur</th>
+      <th width="150">{{pari.match.equipeDom}}</th>
+      <th width="150">{{pari.match.equipeExt}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor = "let pari of listPari()">
+      
+    </tr>
+    </tbody>
+  </table>
+
+</section>

@@ -2,9 +2,20 @@ package fr.formation.model;
 
 import java.util.Date;
 
-import javax.persistence.*;
-import javax.validation.constraints.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
+import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import fr.formation.model.Views.CommonView;
@@ -24,7 +35,6 @@ public class Pari {
 	
 	@JsonView(Views.PariView.class)
 	@MapsId
-	@NotNull
 	@ManyToOne
 	@JoinColumn(name="par_utilisateur_id")
 	private Utilisateur utilisateur;
@@ -54,6 +64,7 @@ public class Pari {
 	private Equipe vainqueur;
 	
 	@JsonView(CommonView.class)
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 	@Column(name="par_DateHeure", columnDefinition="DATETIME")
 	@Temporal(TemporalType.DATE)
 	private Date date;

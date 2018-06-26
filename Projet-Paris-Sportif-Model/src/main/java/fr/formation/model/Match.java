@@ -13,6 +13,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.Cascade;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonView;
 
 import fr.formation.model.Views.CommonView;;
@@ -47,6 +48,7 @@ public class Match implements Serializable {
 	@Column(name="MAT_PHASE")
 	protected Phase phase;
 	
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm")
 	@JsonView(CommonView.class)
 	@Column(name="MAT_DATEHEURE", nullable=true, columnDefinition="DATETIME DEFAULT CURRENT_TIMESTAMP")
 	@Temporal(TemporalType.DATE)
