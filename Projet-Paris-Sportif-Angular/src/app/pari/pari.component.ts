@@ -74,6 +74,9 @@ export class PariComponent implements OnInit {
     return year + "-" + (monthIndex+1) + "-" + day + " " + hours + ":" + minutes;
   }
 
+  public listPari(){
+
+  }
 
   ngOnInit() {
   }
