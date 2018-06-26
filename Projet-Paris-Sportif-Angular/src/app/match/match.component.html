@@ -1,0 +1,54 @@
+<p>test d'affichage</p>
+
+<head>
+  <link rel="stylesheet" href="assets/css/flags.css" />
+</head>
+<body>
+
+<header>
+  <h1 >Pari match</h1>
+</header>
+
+<body>
+<p>test</p>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Stade</th>
+      <th scope="col">Equipe 1</th>
+      <th scope="col">Equipe 2</th>
+      <th scope="col"></th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let match of matchs">
+
+      <td>
+      <span>{{ match.date }}</span>
+      </td>
+      <td>
+      <span>{{ match.stade.ville }}</span>
+      </td>
+      <td>
+      <span>{{ match.equipeDom.nom }}</span>
+      </td>
+
+      <td>
+      <span>{{ match.equipeExt.nom}}</span>
+      </td>
+
+      <td>
+        <span><a [routerLink]="['/match', match.id]" routerLinkActive="active">parier !</a></span>
+       </td>
+
+
+    </tr>
+
+    </tbody>
+  </table>
+
+</body>

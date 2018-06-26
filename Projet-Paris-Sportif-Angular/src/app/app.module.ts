@@ -7,6 +7,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AccueilComponent} from './accueil.component';
+import {MatchModule} from './match/match.module';
 
 const routes: Routes = [
   {path: 'home', component: AccueilComponent}
@@ -18,7 +19,7 @@ const routes: Routes = [
     AccueilComponent
   ],
   imports: [
-    BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, PariModule
+    BrowserModule, FormsModule, RouterModule.forRoot(routes), HttpClientModule, PariModule, MatchModule
   ],
   providers: [],
   bootstrap: [AppComponent]

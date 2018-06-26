@@ -30,3 +30,11 @@ input::-webkit-outer-spin-button {
   margin:0;
 }
 
+e: none;
+	margin:0;
+}
+
+
+.erreurDate{
+	color: red;
+}

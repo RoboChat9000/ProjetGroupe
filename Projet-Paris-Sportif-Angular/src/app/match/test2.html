@@ -1,0 +1,51 @@
+<title>Accueil</title>
+</head>
+<body>
+<header>
+  <h1>Les matches !</h1>
+</header>
+<p>test</p>
+<section>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Stade</th>
+      <th scope="col">Equipe 1</th>
+      <th scope="col">Equipe 2</th>
+      <th scope="col"></th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="match : ${matches}">
+      <td th:text="${match.date}"> </td>
+      <td th:text="${match.stade}"> </td>
+      <td th:text="${match.equipeDom}"> </td>
+      <td th:text="${match.equipeExt}"> </td>
+      <td><a th:href="@{Parier(id=${match.id})}">Parier</a></td>
+
+    </tr>
+
+    </tbody>
+  </table>
+  <div><div class="form-inputs"><div>
+    <div class="form-group">
+      <input name="A_1.home" id="A_1.home" min="0" max="9" pattern="\d*" placeholder="..." type="number" class="ml-0 form-control" autocomplete="off" value=""><div>
+      <div class="invalid-feedback hidden d-none">submitScores.errors.score.required</div>
+      <div class="invalid-feedback hidden d-none">submitScores.errors.score.toSmall</div>
+    </div></div>
+    <svg aria-hidden="true" data-prefix="fas" data-icon="minus" class="svg-inline--fa fa-minus fa-w-14 separator" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path fill="currentColor" d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path>
+    </svg>
+    <div class="form-group"><input name="A_1.away" id="A_1.away" min="0" max="9" pattern="\d*" placeholder="..." type="number" class="mr-0 is-valid form-control" autocomplete="off" value=""><div>
+      <div class="invalid-feedback hidden d-none">submitScores.errors.score.required</div>
+      <div class="invalid-feedback hidden d-none">submitScores.errors.score.toSmall</div>
+    </div></div></div></div>
+    <div class="quotation text-primary"><span class="score badge badge-light">14</span>
+      <span class="score badge badge-light mx-3">44</span>
+      <span class="score badge badge-light">90</span></div></div>
+</section>
+</body>
+</html>

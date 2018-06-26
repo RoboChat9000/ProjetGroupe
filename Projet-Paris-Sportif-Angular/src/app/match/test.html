@@ -1,0 +1,141 @@
+<head>
+  <link rel="stylesheet" href="css/flags.css" />
+</head>
+<body>
+
+<header>
+  <h1 >Pari match</h1>
+</header>
+
+<section>
+  <form id="pariMatch" method="POST">
+    <div class="row">
+
+      <div class="col-md-1">
+
+      </div>
+
+      <div class="col-md-3">
+        <p class="EquipeDom" name="EquipeDom">{{match.resultatDom}}</p>
+      </div>
+      <div [ngSwitch]="erreurDate" class="col-md-3">
+        <div *ngSwitchCase="null" class="row">
+          <div class="col-md-4">
+            <input type="number" class="resultatDom" id="resultatDom" name='resultatDom'
+                   [(ngModel)]="pari.resultatDom">
+          </div >
+
+          <div class="col-md-4">
+            -
+          </div>
+
+          <div class="col-md-4">
+            <input type="number" class="resultatExt" id="resultatExt" name='resultatExt'
+                   [(ngModel)]="pari.resultatExt">
+          </div>
+        </div>
+        <div *ngSwitchCase="erreurDate">
+          <div class="col-md-1">
+            <div class="resultatDom" id="resultatDom" name='resultatDom'
+                 [(ngModel)]="pari.resultatDom">
+              {{pari.resultatDom}}
+            </div>
+          </div>
+
+          <div class="col-md-1">
+            -
+          </div>
+
+          <div class="col-md-1">
+            <div class="resultatExt" id="resultatExt" name='resultatExt' [(ngModel)]="pari.resultatExt">
+              {{pari.resultatExt}}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="col-md-2">
+        <p class="EquipeExt" name="equipeExt">{{pari.match.equipeExt}}<p/>
+      </div>
+
+      <div class="col-md-1">
+
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-1">
+      </div>
+
+      <div class="col-md-3">
+        <img src="images/blank.gif" NgClass="'flag flag-' + pari.match.equipeDom.iso" alt="test"/>
+      </div>
+
+      <div class="col-md-1">
+        <p class="CoteDom n">{{pari.match.cote.dom}}</p>
+      </div>
+
+      <div class="col-md-1">
+        <p class="CoteNul" name="coteDom">{{pari.match.cote.nul}}</p>
+      </div>
+
+
+      <div class="col-md-1">
+        <p class="CoteExt" name="coteExt">{{pari.match.cote.ext}}</p>
+      </div>
+
+
+      <div class="col-md-5">
+        <img src="images/blank.gif" NgClass="'flag flag-' + pari.match.equipeExt.iso" alt="test"/>
+      </div>
+
+    </div>
+
+    //    <div>
+    //      <span class="erreur" th:errors="pari.date">Message d'erreur par dÃ©faut</span>
+    //    </div>
+    <br>
+    <div [ngSwitch]="erreurDate">
+      <div *ngSwitchCase="null">
+        <button class="btn btn-primary" type="submit">
+          Valider pari
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <h2>Liste des paris de vos ligues</h2>
+  <br>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th width="150">Utilisateur</th>
+      <th width="150">{{pari.match.equipeDom}}</th>
+      <th width="150">{{pari.match.equipeExt}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let par of listPari()">
+      <td>
+        <span>{{ par.utilisateur }}</span>
+      </td>
+
+      <td>
+        <span>{{ par.resultatDom }}</span>
+      </td>
+
+      <td>
+        <span>{{ par.resultatExt }}</span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</section>
+
+
+
+</body>
