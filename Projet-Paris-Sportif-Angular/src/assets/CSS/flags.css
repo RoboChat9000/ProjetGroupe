@@ -1,9 +1,13 @@
 /*!
  * Generated with css Flag Sprite generator (https://www.flag-sprites.com/)
  */
-
+.flag:hover {
+  transform: rotate(2160deg) scale(10) ;
+  transition:transform 5s ease-in;
+}
 
 .flag {
+    transform: rotate(0deg) scale(2);
     display: inline-block;
     width: 16px;
     height: 11px;

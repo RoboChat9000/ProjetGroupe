@@ -1,7 +1,7 @@
 <p>test d'affichage</p>
 
 <head>
-  <link rel="stylesheet" href="assets/css/flags.css" />
+
 </head>
 <body>
 
@@ -17,7 +17,9 @@
     <tr>
       <th scope="col">Date</th>
       <th scope="col">Stade</th>
+      <th scope="col"></th>
       <th scope="col">Equipe 1</th>
+      <th scope="col"></th>
       <th scope="col">Equipe 2</th>
       <th scope="col"></th>
 
@@ -34,7 +36,13 @@
       <span>{{ match.stade.ville }}</span>
       </td>
       <td>
+        <img src="assets/images/blank.gif" [ngClass]="'flag flag-' + [match.equipeDom.iso]" alt="test"/>
+      </td>
+      <td>
       <span>{{ match.equipeDom.nom }}</span>
+      </td>
+      <td>
+        <img src="assets/images/blank.gif" [ngClass]="'flag flag-' + [match.equipeExt.iso]" alt="test"/>
       </td>
 
       <td>
